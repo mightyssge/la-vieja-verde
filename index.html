@@ -344,22 +344,22 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 
 
 /* intro */
-#intro{position:fixed;inset:0;z-index:100;background:var(--green);display:grid;place-items:center;overflow:hidden;cursor:pointer}
+#intro{position:fixed;inset:0;z-index:100;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh;overflow:hidden;cursor:pointer}
 #intro.bye{animation:introUp .9s cubic-bezier(.7,0,.2,1) forwards}
 @keyframes introUp{to{transform:translateY(-110%)}}
 #intro .drip{top:100%;bottom:auto;height:70px;transform:scaleY(-1)}
-#intro .orbit{position:relative;width:min(520px,80vw);aspect-ratio:1}
+#intro .orbit{position:relative;width:min(460px,80vw,52vh);aspect-ratio:1}
 #intro .pn{position:absolute;left:50%;top:50%;width:46%;margin:-17% 0 0 -23%;animation:pDrop 1s cubic-bezier(.3,1.5,.5,1) both,pSpin 6s linear 1s infinite}
 @keyframes pDrop{0%{transform:translateY(-140%) rotate(-60deg);opacity:0}60%{opacity:1}100%{transform:none}}
 @keyframes pSpin{to{transform:rotate(360deg)}}
 #intro .ing{position:absolute;width:30%;filter:drop-shadow(0 14px 18px rgba(0,0,0,.4));opacity:0}
 #intro .i1{left:-6%;top:6%;animation:fly1 .8s var(--ease) .55s forwards}
 #intro .i2{right:-6%;top:10%;animation:fly2 .8s var(--ease) .7s forwards}
-#intro .i3{left:34%;bottom:-8%;animation:fly3 .8s var(--ease) .85s forwards}
+#intro .i3{left:36%;bottom:0;width:26%;animation:fly3 .8s var(--ease) .85s forwards}
 @keyframes fly1{from{opacity:0;transform:translate(-60vw,-20vh) rotate(-90deg)}to{opacity:1;transform:rotate(-12deg)}}
 @keyframes fly2{from{opacity:0;transform:translate(60vw,-20vh) rotate(90deg)}to{opacity:1;transform:rotate(14deg)}}
 @keyframes fly3{from{opacity:0;transform:translateY(60vh) rotate(60deg)}to{opacity:1;transform:rotate(-6deg)}}
-#intro .wordm{position:absolute;left:0;right:0;bottom:12vh;text-align:center;color:var(--cream);opacity:0;animation:wIn .7s var(--ease) 1.2s forwards}
+#intro .wordm{position:relative;text-align:center;color:var(--cream);opacity:0;animation:wIn .7s var(--ease) 1.2s forwards}
 #intro .wordm b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.9;display:block;color:#F4A23A}
 #intro .wordm span{font-family:var(--hand);font-size:clamp(1.4rem,2.6vw,2rem)}
 @keyframes wIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
