@@ -324,7 +324,8 @@ table.nt{width:100%;border-collapse:collapse;font-size:.95rem}
 .ctrl button{all:unset;cursor:pointer;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px;border-radius:12px;border:2px solid rgba(255,255,255,.3)}
 .ctrl button.play{background:#F4A23A;color:var(--ink);border-color:#F4A23A}
 .ctrl button:focus-visible{outline:3px solid #F4A23A}
-.vid{margin-top:22px;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#000}
+.vidwrap{margin:6px 0 26px;display:grid;gap:12px}
+.vid{border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#000}
 .vid video,.vid iframe{width:100%;height:100%;border:0}
 @media (max-width:900px){.steps{grid-template-columns:repeat(3,1fr)}.detail{grid-template-columns:1fr}}
 
@@ -560,6 +561,7 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
     </div>
   </div>
   <div class="wrap" style="padding-bottom:110px">
+    <div class="vidwrap rv" id="vidWrap" hidden><span class="kick" style="color:#F4A23A" data-i18n="ex.vid">Video del proceso · 38 s</span><div class="vid" id="vidBox"></div></div>
     <div class="route rv" id="route">
       <svg class="map" viewBox="0 0 1000 380" role="img" aria-label="Ruta Callao – Canal de Panamá – Hamburgo">
         <rect class="sea" width="1000" height="380" rx="18"/>
@@ -578,7 +580,6 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
       <div class="detail" id="detail" aria-live="polite"></div>
       <div class="ctrl"><button class="play" id="playBtn"></button><button id="prevBtn" data-i18n="ex.prev">← Anterior</button><button id="nextBtn" data-i18n="ex.next">Siguiente →</button></div>
     </div>
-    <div class="vid" id="vidBox" hidden></div>
   </div>
 </section>
 
@@ -614,7 +615,7 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 <script>
 /* ===== Video opcional ===== */
 const VIDEO_YOUTUBE = ""; // ej. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
-const VIDEO_FILE = "";    // ej. "video/exportacion.mp4"
+const VIDEO_FILE = "video/exportacion.mp4"; // hecho con HyperFrames (carpeta la-vieja-verde-video)
 
 const T={es:{},de:{
 "nav.sabores":"Sorten","nav.historia":"Über uns","nav.ficha":"Datenblatt","nav.attr":"Merkmale","nav.tr":"Rückverfolgung","nav.mkt":"Markt","nav.exp":"Export",
@@ -628,7 +629,7 @@ const T={es:{},de:{
 "tr.eye":"QR-Rückverfolgbarkeit","tr.h":"Glas scannen, Geschichte erfahren","tr.go":"Verfolgen","tr.qr":"Jedes Etikett trägt einen QR-Code wie diesen. Scanne ihn mit dem Handy.","tr.demo":"Demo mit Beispieldaten aus dem Betriebsplan. Format: CH, CF oder LU + Jahr + Chargennummer.","tr.ok":"✓ Charge konform",
 "mk.eye":"Warum Deutschland","mk.h":"Eine Premium-Nische, kein Preiskampf","mk.pp":"Marketing · Berlin, Hamburg, München oder Frankfurt. Aktiv, bewusst, liest Etiketten.","mk.l1":"<b>€ 3.000–4.500</b> im Monat","mk.l2":"<b>59 %</b> achten auf Bio","mk.l3":"<b>88 %</b> kennen den Nutri-Score","mk.ch":"Kilopreis in Deutschland","mk.cs":"€/kg · REWE, EDEKA und Rossmann im Vergleich zu unserer Linie","mk.pos":"Spezialistenstrategie: Bioläden (45 %), E-Commerce (30 %) und Supermärkte (25 %). Weniger als 0,3 % des verfügbaren Marktes.",
 "wb1":"+37,1 %","wb2":"USD 207,5 Mio.","wb3":"€ 18,23 Mrd.","wb4":"4,79 %","w1":"Importwachstum HS 200811 in Deutschland, 2021–2025","w2":"deutscher Erdnussbuttermarkt 2025","w3":"Umsatz im deutschen Biomarkt 2025 (+6,7 %)","w4":"prognostiziertes jährliches Marktwachstum",
-"ex.eye":"Exportprozess nach Deutschland","ex.h":"Callao → Hamburg","ex.p":"Jede Etappe: Produktion, Qualität, Verpackung, Zoll in Callao, Seetransport über Panama und Ankunft in deutschen Bioläden.","ex.prev":"← Zurück","ex.next":"Weiter →",
+"ex.eye":"Exportprozess nach Deutschland","ex.h":"Callao → Hamburg","ex.p":"Jede Etappe: Produktion, Qualität, Verpackung, Zoll in Callao, Seetransport über Panama und Ankunft in deutschen Bioläden.","ex.vid":"Video zum Prozess · 38 s","ex.prev":"← Zurück","ex.next":"Weiter →",
 "map.lima":"Werk und Laden","map.callao":"Hafen · FOB","map.pan":"Panamakanal","map.atl":"Atlantik","map.hh":"CIF · Importeur",
 "ft.h":"Geschmack, der verbindet","ft.qh":"Scannen und teilen","ft.qp":"Alles über Chocomaní, Cafemaní und Lucumaní an einem Ort.","ft.p":"Desarrollo de Proyectos Internacionales (15320) · Gruppe 4 · Prof. Luis Rodolfo Ubillus Ramírez","ft.l":"Akademisches Projekt. Produktbilder mit KI auf Basis der echten Verpackung erstellt.","kbd":"zum Wechseln der Abschnitte"
 },en:{
@@ -643,7 +644,7 @@ const T={es:{},de:{
 "tr.eye":"QR traceability","tr.h":"Scan the jar, discover its story","tr.go":"Track","tr.qr":"Every label carries a QR like this one. Scan it with your phone.","tr.demo":"Demo with sample data from the operations plan. Format: CH, CF or LU + year + batch number.","tr.ok":"✓ Batch compliant",
 "mk.eye":"Why Germany","mk.h":"A premium niche, not a price war","mk.pp":"Marketing · Berlin, Hamburg, Munich or Frankfurt. Active, conscious, reads labels.","mk.l1":"<b>€3,000–4,500</b> a month","mk.l2":"<b>59%</b> look for Bio","mk.l3":"<b>88%</b> know Nutri-Score","mk.ch":"Price per kilo in Germany","mk.cs":"€/kg · REWE, EDEKA and Rossmann vs. our line","mk.pos":"Specialist strategy: organic stores (45%), e-commerce (30%) and supermarkets (25%). Under 0.3% of the available market.",
 "wb1":"+37.1%","wb2":"USD 207.5 M","wb3":"€18.23 bn","wb4":"4.79%","w1":"import growth for HS 200811 in Germany, 2021–2025","w2":"German peanut butter market in 2025","w3":"German organic market sales in 2025 (+6.7%)","w4":"projected annual market growth",
-"ex.eye":"Export process to Germany","ex.h":"Callao → Hamburg","ex.p":"Every stage: production, quality, packing, customs in Callao, sea transit via Panama and arrival at German organic stores.","ex.prev":"← Previous","ex.next":"Next →",
+"ex.eye":"Export process to Germany","ex.h":"Callao → Hamburg","ex.p":"Every stage: production, quality, packing, customs in Callao, sea transit via Panama and arrival at German organic stores.","ex.vid":"Process video · 38 s","ex.prev":"← Previous","ex.next":"Next →",
 "map.lima":"Plant and shop","map.callao":"Port · FOB","map.pan":"Panama Canal","map.atl":"Atlantic Ocean","map.hh":"CIF · importer",
 "ft.h":"Flavors that connect","ft.qh":"Scan and share","ft.qp":"Everything about Chocomaní, Cafemaní and Lucumaní in one place.","ft.p":"Desarrollo de Proyectos Internacionales (15320) · Group 4 · Prof. Luis Rodolfo Ubillus Ramírez","ft.l":"Academic project. Product images AI-generated from the real packaging.","kbd":"to switch sections"
 }};
@@ -664,18 +665,15 @@ const D={
 es:{lot:"Lote",nut:["Energía","Grasas","de las cuales saturadas","Hidratos de carbono","de los cuales azúcares","Fibra alimentaria","Proteínas","Sal"],nutH:["Nutriente","100 g","Porción"],
   kp:["proteína","fibra","kcal"],noteEst:"Valores calculados a partir de la formulación, a confirmar con análisis de laboratorio.",noteLu:"Energía, grasas, hidratos, azúcares y proteínas según la ficha técnica; grasas saturadas y fibra calculadas.",
   fi:n=>`Ficha ${n}`,play:"▶ Reproducir recorrido",pause:"❚❚ Pausar",stage:"Etapa",of:"de",lotErr:"No encontramos ese lote. Prueba con CH-2028-009, CF-2028-011 o LU-2028-014.",
-  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Convencional","Orgánico","Orgánico","Premium saborizado","Choco · Café · Lúcuma"],see:"Ver ficha",
-  tick1:["Sin aceite de palma","85% maní peruano","Frasco de vidrio 220 g","Etiqueta en alemán","Trazabilidad QR por lote","Rumbo a Alemania"],tick2:["Chocomaní","Cafemaní","Lucumaní","Sabores que conectan"]},
+  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Convencional","Orgánico","Orgánico","Premium saborizado","Choco · Café · Lúcuma"],see:"Ver ficha",},
 de:{lot:"Charge",nut:["Brennwert","Fett","davon gesättigte Fettsäuren","Kohlenhydrate","davon Zucker","Ballaststoffe","Eiweiß","Salz"],nutH:["Nährwert","100 g","Portion"],
   kp:["Eiweiß","Ballaststoffe","kcal"],noteEst:"Aus der Rezeptur berechnete Werte, durch Laboranalyse zu bestätigen.",noteLu:"Brennwert, Fett, Kohlenhydrate, Zucker und Eiweiß laut Datenblatt; gesättigte Fettsäuren und Ballaststoffe berechnet.",
   fi:n=>`Datenblatt ${n}`,play:"▶ Route abspielen",pause:"❚❚ Pause",stage:"Etappe",of:"von",lotErr:"Charge nicht gefunden. Probiere CH-2028-009, CF-2028-011 oder LU-2028-014.",
-  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Konventionell","Bio","Bio","Premium aromatisiert","Choco · Kaffee · Lúcuma"],see:"Datenblatt",
-  tick1:["Ohne Palmöl","85 % peruanische Erdnüsse","220-g-Glas","Deutsches Etikett","QR-Rückverfolgung pro Charge","Unterwegs nach Deutschland"],tick2:["Chocomaní","Cafemaní","Lucumaní","Geschmack, der verbindet"]},
+  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Konventionell","Bio","Bio","Premium aromatisiert","Choco · Kaffee · Lúcuma"],see:"Datenblatt",},
 en:{lot:"Batch",nut:["Energy","Fat","of which saturates","Carbohydrate","of which sugars","Fibre","Protein","Salt"],nutH:["Nutrient","100 g","Portion"],
   kp:["protein","fibre","kcal"],noteEst:"Values calculated from the formulation, to be confirmed by lab analysis.",noteLu:"Energy, fat, carbohydrate, sugars and protein from the spec sheet; saturates and fibre calculated.",
   fi:n=>`${n} spec sheet`,play:"▶ Play the route",pause:"❚❚ Pause",stage:"Stage",of:"of",lotErr:"Batch not found. Try CH-2028-009, CF-2028-011 or LU-2028-014.",
-  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Conventional","Organic","Organic","Premium flavored","Choco · Coffee · Lúcuma"],see:"Spec sheet",
-  tick1:["Palm-oil free","85% Peruvian peanuts","220 g glass jar","German label","QR traceability per batch","Heading to Germany"],tick2:["Chocomaní","Cafemaní","Lucumaní","Flavors that connect"]}};
+  chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Conventional","Organic","Organic","Premium flavored","Choco · Coffee · Lúcuma"],see:"Spec sheet",}};
 
 const ING={mani:["Maní tostado","Roasted peanuts","Erdnüsse geröstet","#c8935a"],azucar:["Azúcar de caña","Cane sugar","Rohrzucker","#d9b97f"],cacao:["Cacao en polvo","Cacao powder","Kakaopulver","#5A2A1B"],cafe:["Café peruano molido","Ground Peruvian coffee","Kaffee aus Peru, gemahlen","#3a2216"],lucuma:["Polvo de lúcuma","Lúcuma powder","Lúcumapulver","#F4A23A"],girasol:["Aceite de girasol","Sunflower oil","Sonnenblumenöl","#e8cf5b"],sal:["Sal marina","Sea salt","Meersalz","#9fb3a8"]};
 const F={
@@ -710,7 +708,6 @@ const nf=n=>lang==="en"?String(n):String(n).replace(".",",");
 const nm=k=>ING[k][lang==="en"?1:lang==="de"?2:0];
 const tr3=(es,en,de)=>lang==="de"?de:lang==="en"?en:es;
 
-/* tickers */
 /* hero */
 const MIT={choco:"Schokolade",cafe:"Kaffee",lucu:"Lúcuma"};
 const FLS={choco:["fl-choco","fl-peanut","fl-spoon"],cafe:["fl-coffee","fl-peanut","fl-spoon"],lucu:["fl-lucuma","fl-peanut","fl-spoon"]};
@@ -813,9 +810,9 @@ playBtn.onclick=()=>{if(timer)return stop();if(cur===5)go(0);playBtn.textContent
 $("#prevBtn").onclick=()=>{stop();go(cur-1)};$("#nextBtn").onclick=()=>{stop();go(cur+1)};
 
 /* video opcional */
-(()=>{const box=$("#vidBox");const id=(VIDEO_YOUTUBE.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)||[])[1];
- if(id){box.hidden=false;box.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`}
- else if(VIDEO_FILE){box.hidden=false;box.innerHTML=`<video src="${VIDEO_FILE}" controls preload="metadata" playsinline></video>`}})();
+(()=>{const box=$("#vidBox"),w=$("#vidWrap");const id=(VIDEO_YOUTUBE.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)||[])[1];
+ if(id){w.hidden=false;box.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`}
+ else if(VIDEO_FILE){w.hidden=false;box.innerHTML=`<video src="${VIDEO_FILE}" poster="assets/video-poster.webp" controls preload="none" playsinline></video>`}})();
 
 /* idioma */
 $$("[data-i18n]").forEach(el=>T.es[el.dataset.i18n]=el.innerHTML);
