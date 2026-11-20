@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Vieja Verde · Erdnusscreme aus Peru</title>
+<meta name="description" content="Mantequillas de maní peruanas Chocomaní, Cafemaní y Lucumaní: sabores, ingredientes, información nutricional, trazabilidad y proceso de exportación a Alemania.">
+<meta property="og:title" content="La Vieja Verde · Sabores peruanos que nutren un mejor mañana">
+<meta property="og:description" content="Chocomaní, Cafemaní y Lucumaní: mantequillas de maní peruanas rumbo a Alemania.">
+<meta property="og:image" content="assets/w11.jpg">
+<meta name="theme-color" content="#1f3a1f">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2b1a; --forest:#1f3a1f; --leaf:#3f7a33; --sprout:#7fb35a; --mint:#e6efd9; --cream:#f7f1e5; --paper:#fffdf8;
+  --peanut:#c8935a; --choco:#5b3322; --coffee:#3a2619; --lucuma:#e3a23b; --line:rgba(31,58,31,.14); --muted:#5d6b56;
+  --r:22px; --shadow:0 18px 50px -24px rgba(31,58,31,.45);
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"DM Sans",system-ui,sans-serif; --hand:"Caveat",cursive;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:800;color:var(--forest)}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+.lead{font-size:1.12rem;max-width:60ch;color:#3b4a37;text-wrap:pretty}
+.hand{font-family:var(--hand);font-weight:600}
+section{padding:clamp(72px,10vw,120px) 0}
+.head{display:grid;gap:14px;margin-bottom:44px}
+:focus-visible{outline:2px solid var(--lucuma);outline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(31,58,31,.94);backdrop-filter:blur(10px);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.badge{width:44px;height:44px;border-radius:50%;background:var(--paper);display:grid;place-items:center;overflow:hidden;flex:none}
+.badge img{width:34px;height:auto;margin-top:4px}
+.wm{font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.88;font-size:1.05rem;letter-spacing:-.01em}
+.nav ul{display:flex;gap:2px;list-style:none;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:.88rem;padding:8px 11px;border-radius:99px;transition:background .2s}
+.nav ul a:hover,.nav ul a.on{background:rgba(255,255,255,.14)}
+.lang{display:flex;background:rgba(255,255,255,.1);border-radius:99px;padding:3px}
+.lang button{all:unset;cursor:pointer;font-weight:700;font-size:.78rem;padding:6px 10px;border-radius:99px;letter-spacing:.04em}
+.lang button[aria-pressed=true]{background:var(--lucuma);color:var(--forest)}
+.lang button:focus-visible{outline:2px solid #fff}
+@media (max-width:1080px){.nav ul{display:none}}
+
+/* hero */
+.hero{background:var(--forest);color:#fff;padding:52px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -1px;height:90px;background:var(--cream);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.4rem);font-weight:800}
+.hero h1 em{font-style:normal;color:#c6e3a4}
+.hero .hand{font-size:clamp(1.6rem,2.6vw,2.2rem);color:var(--lucuma);display:block;margin-bottom:10px;transform:rotate(-2deg)}
+.hero p{color:#dfe9d6;font-size:1.12rem;max-width:46ch;margin:22px 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:99px;background:var(--lucuma);color:var(--forest);transition:transform .2s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.hero-img{position:relative;border-radius:200px 200px var(--r) var(--r);overflow:hidden;aspect-ratio:4/5;max-height:600px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);margin-bottom:60px}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.stamp{position:absolute;right:14px;top:18%;width:118px;height:118px;border-radius:50%;background:var(--paper);color:var(--forest);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;font-size:.86rem;line-height:1.05;transform:rotate(10deg);box-shadow:var(--shadow);z-index:2}
+.stamp b{display:block;font-size:1.7rem;color:var(--leaf)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);border-radius:16px;overflow:hidden;margin:40px 0 70px}
+.facts div{background:var(--forest);padding:16px 14px}
+.facts b{display:block;font-family:var(--display);font-size:1.7rem;color:#fff}
+.facts span{font-size:.8rem;color:#bcd0b0}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-img{max-height:460px;margin-bottom:80px}.facts{grid-template-columns:repeat(2,1fr)}}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.story-img{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1;position:relative}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story-img .note{position:absolute;left:16px;bottom:16px;background:var(--paper);border-radius:14px;padding:10px 14px;font-size:.85rem;max-width:80%;color:var(--forest);font-weight:500}
+.quote{font-family:var(--hand);font-size:clamp(1.7rem,2.6vw,2.2rem);color:var(--leaf);line-height:1.1;margin:22px 0}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.mini div{background:var(--paper);border-radius:16px;padding:16px}
+.mini b{font-family:var(--display);font-size:1.6rem;color:var(--forest);display:block}
+.mini span{font-size:.82rem;color:var(--muted)}
+@media (max-width:900px){.story .wrap{grid-template-columns:1fr}.mini{grid-template-columns:1fr 1fr}}
+
+/* flavors */
+.flav{background:var(--paper)}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.flavor{--c:var(--choco);background:var(--cream);border-radius:var(--r);padding:26px 24px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.flavor:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.flavor::before{content:"";position:absolute;inset:0 0 auto;height:46%;background:color-mix(in srgb,var(--c) 14%,transparent)}
+.flavor .jar{position:relative;height:250px;display:grid;place-items:center;margin-bottom:14px}
+.flavor .jar svg{height:100%;width:auto;filter:drop-shadow(0 18px 18px rgba(0,0,0,.18));transition:transform .5s var(--ease)}
+.flavor:hover .jar svg{transform:rotate(-4deg) scale(1.03)}
+.tier{position:relative;align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:var(--c);color:#fff}
+.flavor h3{font-size:2.2rem;font-weight:800;margin:12px 0 2px;color:var(--c)}
+.flavor .de{font-size:.92rem;color:#6b7863;font-style:italic;margin-bottom:12px}
+.flavor p{color:#3b4a37;font-size:.98rem}
+.notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.notes span{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:99px;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
+.price{display:flex;justify-content:space-between;align-items:end;border-top:1px dashed var(--line);margin-top:auto;padding-top:18px}
+.flavor .notes{margin-bottom:22px}
+.price b{font-family:var(--display);font-size:1.6rem;color:var(--forest)}
+.price small{color:#6b7863;font-size:.78rem;display:block}
+.choco{--c:var(--choco)}.cafe{--c:var(--coffee)}.lucu{--c:#a8670f}
+.ladder-note{margin-top:26px;color:var(--muted);font-size:.92rem;text-align:center}
+@media (max-width:900px){.ladder{grid-template-columns:1fr}}
+
+/* tabs */
+.tabs{display:inline-flex;background:var(--mint);border-radius:99px;padding:5px;gap:4px;margin-bottom:28px;flex-wrap:wrap}
+.tabs button{all:unset;cursor:pointer;font-weight:700;padding:10px 18px;border-radius:99px;color:var(--forest);font-size:.95rem;transition:background .25s,color .25s}
+.tabs button[aria-selected=true]{background:var(--forest);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+
+/* ingredients */
+.ing-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.bar{display:flex;height:64px;border-radius:14px;overflow:hidden;margin-bottom:22px;box-shadow:inset 0 0 0 1px var(--line)}
+.bar span{display:grid;place-items:center;color:#fff;font-weight:700;font-size:.82rem;transition:flex-grow .6s var(--ease);min-width:0;overflow:hidden;white-space:nowrap}
+.ilist{list-style:none;padding:0;display:grid;gap:2px}
+.ilist li{display:grid;grid-template-columns:14px 1fr auto;gap:12px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line)}
+.ilist i{width:14px;height:14px;border-radius:4px}
+.ilist b{font-family:var(--display);font-size:1.15rem}
+.ilist small{color:#6b7863;display:block;font-size:.82rem}
+.label{background:var(--paper);border-radius:var(--r);padding:26px;border:1.5px dashed rgba(31,58,31,.3)}
+.label h4{font-family:var(--display);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);margin-bottom:8px}
+.label p{font-size:.96rem}
+.label .allergen{margin-top:14px;padding:12px 14px;background:#fff3d6;border-radius:12px;font-size:.92rem}
+.label .dez{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.9rem;color:#4b5a45}
+.spot{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--forest);color:#fff;border-radius:18px;padding:16px 18px}
+.spot .dot{width:54px;height:54px;border-radius:50%;background:var(--lucuma);display:grid;place-items:center;font-family:var(--display);font-weight:800;color:var(--forest);font-size:1.3rem}
+.spot b{font-family:var(--display);font-size:1.05rem}
+.spot p{font-size:.88rem;color:#d4e2c9}
+@media (max-width:900px){.ing-grid{grid-template-columns:1fr}}
+
+/* nutrition */
+.nut{background:var(--paper)}
+.nut-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+table.nt{width:100%;border-collapse:collapse;background:var(--cream);border-radius:var(--r);overflow:hidden;font-size:1rem}
+.nt caption{text-align:left;font-family:var(--display);font-weight:800;font-size:1.3rem;padding:0 0 12px;color:var(--forest)}
+.nt th,.nt td{padding:13px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.nt thead th{background:var(--forest);color:#fff;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.nt td:last-child,.nt th:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.nt .sub td:first-child{padding-left:38px;color:var(--muted);font-weight:400}
+.nt .sec{display:block;font-size:.76rem;color:#8a9583;font-style:italic}
+.portion{display:flex;align-items:center;gap:12px;margin:0 0 18px;background:var(--mint);padding:10px 14px;border-radius:14px;font-size:.9rem;flex-wrap:wrap}
+.portion input{accent-color:var(--leaf);flex:1;min-width:140px}
+.portion b{font-family:var(--display);min-width:56px}
+.ring-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ring{background:var(--cream);border-radius:18px;padding:18px 12px;text-align:center}
+.ring svg{width:84px;height:84px;margin:0 auto 6px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:var(--mint)}.ring .fg{stroke:var(--leaf);stroke-linecap:round;transition:stroke-dashoffset .8s var(--ease)}
+.ring b{font-family:var(--display);font-size:1.3rem;display:block}
+.ring span{font-size:.8rem;color:#6b7863}
+.fine{font-size:.82rem;color:#6b7863;margin-top:14px}
+@media (max-width:900px){.nut-grid{grid-template-columns:1fr}}
+
+/* attributes */
+.attr{background:var(--mint)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border-radius:var(--r);padding:26px;display:grid;gap:10px;align-content:start}
+.card .ic{width:52px;height:52px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--leaf)}
+.card .ic svg{width:28px;height:28px}
+.card h3{font-size:1.3rem;font-weight:700;color:var(--forest)}
+.card p{color:#4b5a45;font-size:.95rem}
+.card .tag{font-size:.75rem;font-weight:700;color:#8a5a12;background:#fbe9c8;padding:3px 9px;border-radius:99px;justify-self:start}
+.spec{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);background:var(--forest);color:#fff;border-radius:var(--r);overflow:hidden}
+.spec div{padding:22px;border-right:1px solid rgba(255,255,255,.12)}
+.spec div:last-child{border:0}
+.spec small{color:#a9c39a;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.spec b{display:block;font-family:var(--display);font-size:1.2rem;margin-top:4px}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.spec{grid-template-columns:1fr 1fr}.spec div{border-bottom:1px solid rgba(255,255,255,.12)}}
+
+/* trace */
+.trace-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.lot{background:var(--paper);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.lot label{font-weight:700;font-size:.85rem;color:var(--forest);display:block;margin-bottom:8px}
+.lot form{display:flex;gap:8px}
+.lot input{flex:1;min-width:0;font:600 1.05rem/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);color:var(--ink)}
+.lot input:focus{outline:none;border-color:var(--leaf)}
+.lot button{all:unset;cursor:pointer;background:var(--forest);color:#fff;font-weight:700;padding:0 18px;border-radius:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips button{all:unset;cursor:pointer;font-size:.78rem;font-weight:700;background:var(--mint);color:var(--forest);padding:6px 10px;border-radius:99px}
+.lot .demo{font-size:.8rem;color:var(--muted);margin-top:14px}
+.err{color:#a3361b;font-size:.88rem;margin-top:10px;min-height:1.2em}
+.tl{list-style:none;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 18px 46px;opacity:0;transform:translateX(-8px);animation:tl .5s var(--ease) forwards}
+.tl li::before{content:"";position:absolute;left:8px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--leaf)}
+.tl li.ok::before{background:var(--leaf)}
+.tl time{font-size:.78rem;font-weight:700;color:var(--leaf);letter-spacing:.06em;text-transform:uppercase}
+.tl b{display:block;font-family:var(--display);font-size:1.12rem;color:var(--forest)}
+.tl span{font-size:.92rem;color:#4b5a45}
+@keyframes tl{to{opacity:1;transform:none}}
+.lothead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.lothead b{font-family:var(--display);font-size:1.5rem;color:var(--forest)}
+.ok-pill{background:var(--mint);color:var(--leaf);font-weight:700;font-size:.8rem;padding:6px 12px;border-radius:99px}
+@media (max-width:900px){.trace-grid{grid-template-columns:1fr}}
+
+/* market */
+.mkt{background:var(--paper)}
+.mkt-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}
+.persona{background:var(--forest);color:#fff;border-radius:var(--r);padding:28px;display:grid;gap:14px;align-content:start}
+.persona .av{width:64px;height:64px;border-radius:50%;background:var(--lucuma);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--forest)}
+.persona h3{font-size:1.8rem;font-weight:800}
+.persona p{color:#d4e2c9;font-size:.95rem}
+.persona ul{list-style:none;padding:0;display:grid;gap:8px}
+.persona li{background:rgba(255,255,255,.08);border-radius:12px;padding:10px 12px;font-size:.9rem}
+.persona li b{color:var(--lucuma);font-family:var(--display)}
+.chart{background:var(--cream);border-radius:var(--r);padding:28px}
+.chart h3{font-size:1.3rem;color:var(--forest);font-weight:800}
+.chart .sub{font-size:.88rem;color:var(--muted);margin:4px 0 22px}
+.row{display:grid;grid-template-columns:150px 1fr 96px;gap:12px;align-items:center;padding:7px 0}
+.row .n{font-size:.9rem;font-weight:500}
+.row .n small{display:block;color:var(--muted);font-size:.74rem;font-weight:400}
+.row .t{height:16px;background:var(--mint);border-radius:99px;overflow:hidden}
+.row .t i{display:block;height:100%;width:0;border-radius:99px;background:#9fb29a;transition:width 1s var(--ease)}
+.row.us .t i{background:var(--lucuma)}
+.row.us .n{font-weight:700;color:var(--forest)}
+.row .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;font-size:.92rem}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.why div{border-top:2px solid var(--line);padding-top:16px}
+.why b{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.5rem);display:block;color:var(--forest)}
+.why span{color:var(--muted);font-size:.88rem}
+@media (max-width:900px){.mkt-grid{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.row{grid-template-columns:104px 1fr 84px}}
+
+/* export */
+.exp{background:var(--forest);color:#fff}
+.exp h2{color:#fff}.exp .lead{color:#cfdcc6}.exp .eyebrow{color:#a9d084}
+.player{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;margin-bottom:48px}
+.screen{position:relative;border-radius:var(--r);overflow:hidden;background:#0f1d0f;aspect-ratio:16/9}
+.screen video,.screen iframe{width:100%;height:100%;border:0;display:block;background:#000}
+.placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 30% 30%,#2c4f27,#0f1d0f)}
+.placeholder b{font-family:var(--display);font-size:1.4rem;display:block;margin-bottom:6px}
+.placeholder p{color:#bcd0b0;font-size:.95rem;max-width:40ch;margin:0 auto 16px}
+.placeholder button{all:unset;cursor:pointer;background:var(--lucuma);color:var(--forest);font-weight:700;padding:12px 20px;border-radius:99px}
+.chapters{display:grid;gap:8px;align-content:start}
+.chapters h4{font-family:var(--display);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#a9d084;margin-bottom:6px}
+.chapters button{all:unset;cursor:pointer;display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);font-size:.92rem;transition:background .2s}
+.chapters button:hover,.chapters button.on{background:rgba(255,255,255,.16)}
+.chapters button:focus-visible{outline:2px solid var(--lucuma)}
+.chapters time{font-variant-numeric:tabular-nums;color:var(--lucuma);font-weight:700;font-size:.82rem}
+@media (max-width:900px){.player{grid-template-columns:1fr}}
+.route{position:relative;background:#173017;border-radius:28px;padding:30px clamp(18px,3vw,36px) 34px;overflow:hidden}
+.route svg.map{width:100%;height:auto;display:block}
+.map .sea{fill:#132a13}
+.map .land{fill:#2a4a26}
+.map path.track{fill:none;stroke:rgba(255,255,255,.18);stroke-width:3;stroke-dasharray:2 9;stroke-linecap:round}
+.map path.done{fill:none;stroke:var(--lucuma);stroke-width:3.5;stroke-linecap:round;transition:stroke-dashoffset .9s var(--ease)}
+.map .city circle{fill:#173017;stroke:#a9d084;stroke-width:3;transition:fill .3s}
+.map .city.on circle{fill:var(--lucuma);stroke:#fff}
+.map .city text{fill:#e6efd9;font:700 15px var(--body)}
+.map .city text.s{fill:#a9c39a;font:500 12px var(--body)}
+.map .ship{transition:transform .9s var(--ease)}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:22px}
+.steps button{all:unset;cursor:pointer;padding:12px;border-radius:14px;background:rgba(255,255,255,.05);font-size:.82rem;line-height:1.25;transition:background .2s;display:grid;gap:4px}
+.steps button b{font-family:var(--display);font-size:1.4rem;color:#6f9a5c;transition:color .2s}
+.steps button[aria-selected=true]{background:rgba(255,255,255,.14)}
+.steps button[aria-selected=true] b{color:var(--lucuma)}
+.steps button:focus-visible{outline:2px solid var(--lucuma)}
+.detail{margin-top:20px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;background:var(--paper);color:var(--ink);border-radius:20px;padding:26px 28px;min-height:190px}
+.detail h3{font-size:1.7rem;font-weight:800;color:var(--forest);margin:6px 0 8px}
+.detail p{color:#3b4a37}
+.detail ul{list-style:none;padding:0;display:grid;gap:8px;align-content:start}
+.detail li{background:var(--mint);border-radius:12px;padding:10px 14px;font-size:.92rem}
+.detail li b{font-family:var(--display);color:var(--forest)}
+.ctrl{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.ctrl button{all:unset;cursor:pointer;font-weight:700;padding:10px 18px;border-radius:99px;background:rgba(255,255,255,.1);font-size:.9rem}
+.ctrl button:hover{background:rgba(255,255,255,.2)}
+.ctrl button.play{background:var(--lucuma);color:var(--forest)}
+.ctrl button:focus-visible{outline:2px solid var(--lucuma)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(3,1fr)}.detail{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--cream);padding:80px 0 40px}
+.foot{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+footer .brand{color:var(--forest);margin-bottom:18px}
+footer .badge{width:64px;height:64px;background:var(--mint)}footer .badge img{width:50px}
+footer .wm{font-size:1.6rem}
+.qr{background:var(--paper);border-radius:var(--r);padding:22px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow)}
+.qr img{width:140px;height:140px;image-rendering:pixelated;flex:none}
+.qr p{font-size:.92rem;color:#4b5a45}
+.qr b{font-family:var(--display);font-size:1.2rem;color:var(--forest);display:block}
+.team{columns:2;font-size:.9rem;color:#4b5a45;margin-top:18px;padding:0;list-style:none}
+.legal{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#6b7863}
+@media (max-width:900px){.foot{grid-template-columns:1fr}.qr{flex-direction:column;text-align:center}}
+
+/* presentation hint */
+.kbd{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--forest);color:#fff;font-size:.8rem;padding:9px 14px;border-radius:99px;box-shadow:var(--shadow);display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s var(--ease);pointer-events:none}
+.kbd.show{opacity:1;transform:none}
+.kbd kbd{font:700 .75rem var(--body);background:rgba(255,255,255,.16);padding:2px 7px;border-radius:6px}
+@media (hover:none){.kbd{display:none}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal,.tl li{opacity:1;transform:none}}
+@media print{.nav,.kbd,.ctrl,.player,.lang{display:none}.reveal{opacity:1;transform:none}section{padding:28px 0;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="La Vieja Verde"><span class="badge"><img src="assets/cara-verde.png" alt=""></span><span class="wm">La Vieja<br>Verde</span></a>
+    <ul>
+      <li><a href="#historia" data-i18n="nav.historia">Historia</a></li>
+      <li><a href="#sabores" data-i18n="nav.sabores">Sabores</a></li>
+      <li><a href="#ingredientes" data-i18n="nav.ing">Ingredientes</a></li>
+      <li><a href="#nutricion" data-i18n="nav.nut">Nutrición</a></li>
+      <li><a href="#atributos" data-i18n="nav.attr">Atributos</a></li>
+      <li><a href="#mercado" data-i18n="nav.mkt">Mercado</a></li>
+      <li><a href="#exportacion" data-i18n="nav.exp">Exportación</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Idioma / Sprache / Language">
+      <button data-lang="es" aria-pressed="true">ES</button><button data-lang="de" aria-pressed="false">DE</button><button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="hand" data-i18n="hero.hand">Sabores que conectan</span>
+      <h1 data-i18n="hero.h1">Sabores peruanos que <em>nutren</em> un mejor mañana</h1>
+      <p data-i18n="hero.p">Mantequillas de maní naturales, hechas en Lima con lúcuma, café y cacao del Perú. Sin aceite de palma, en frasco de vidrio y listas para el consumidor consciente de Alemania.</p>
+      <div class="btns">
+        <a class="btn" href="#sabores" data-i18n="hero.b1">Conoce los 3 sabores ↓</a>
+        <a class="btn ghost" href="#exportacion" data-i18n="hero.b2">Ver la ruta a Alemania</a>
+      </div>
+      <div class="facts">
+        <div><b>3</b><span data-i18n="f1">sabores peruanos</span></div>
+        <div><b>85%</b><span data-i18n="f2">maní tostado</span></div>
+        <div><b>0%</b><span data-i18n="f3">aceite de palma</span></div>
+        <div><b>220 g</b><span data-i18n="f4">frasco de vidrio</span></div>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="stamp"><span data-i18n="stamp"><b>100%</b>natural<br>Hecho en Perú</span></div>
+      <div class="hero-img"><img src="assets/w11.jpg" alt="Frascos de 220 g de La Vieja Verde" width="900" height="900" fetchpriority="high"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="story" id="historia">
+  <div class="wrap">
+    <div class="story-img reveal">
+      <img src="assets/tienda-1kg.jpg" alt="Mantequillas de maní La Vieja Verde de 1 kg: Chocomaní, Lucumaní y clásica" loading="lazy" width="1000" height="1000">
+      <span class="note" data-i18n="story.note">Las mantes de 1 kg que ya conquistaron Lima</span>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="story.eye">Quiénes somos</span>
+      <h2 style="margin-top:14px" data-i18n="story.h">De una tienda en San Borja a las góndolas de Alemania</h2>
+      <p class="quote" data-i18n="story.q">"Comida natural y saludable, hecha con cariño de abuela."</p>
+      <p class="lead" data-i18n="story.p">La Vieja Verde es una tienda y restaurante de comida natural en el Boulevard de Surco, San Borja. Allí nacieron sus mantequillas de maní, yogures y granolas. Hoy su línea de mantes saborizadas con ingredientes peruanos da el salto internacional con una propuesta pensada para Alemania.</p>
+      <div class="mini">
+        <div><b data-i18n="sm1">26,4 mil</b><span data-i18n="story.m1">seguidores en Instagram</span></div>
+        <div><b>~800 kg</b><span data-i18n="story.m2">capacidad de planta al mes</span></div>
+        <div><b data-i18n="sm3">1 tienda</b><span data-i18n="story.m3">propia en San Borja, Lima</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flav" id="sabores">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="fl.eye">Los tres sabores</span>
+      <h2 data-i18n="fl.h">Una escalera de sabor: de lo familiar a lo peruano</h2>
+      <p class="lead" data-i18n="fl.p">Tres SKU pensados para el mercado alemán, ordenados en la góndola a la altura de los ojos: la entrada a la izquierda, el premium al centro y la insignia a la derecha.</p>
+    </div>
+    <div class="ladder">
+      <article class="flavor choco reveal">
+        <div class="jar" data-jar="choco"></div>
+        <span class="tier" data-i18n="fl.t1">Producto de entrada</span>
+        <h3>Chocomaní</h3>
+        <div class="de">Erdnusscreme mit Schokolade</div>
+        <p data-i18n="fl.d1">Maní tostado con cacao peruano. Un sabor conocido y de alta aceptación para el desayuno o la merienda. Es la puerta de entrada al mercado alemán.</p>
+        <div class="notes" data-i18n="fl.n1"><span>Cacao</span><span>Familiar</span><span>Uso diario</span></div>
+        <div class="price"><div><small data-i18n="fl.pr">Precio objetivo en Alemania</small><b>€ 4,49</b></div><div style="text-align:right"><small>FOB Callao</small><b style="font-size:1.1rem">USD 2,60</b></div></div>
+      </article>
+      <article class="flavor cafe reveal">
+        <div class="jar" data-jar="cafe"></div>
+        <span class="tier" data-i18n="fl.t2">Segmento premium</span>
+        <h3>Cafemaní</h3>
+        <div class="de">Erdnusscreme mit Kaffee</div>
+        <p data-i18n="fl.d2">Maní con café peruano de especialidad. Intenso y sofisticado, refuerza el posicionamiento premium y el valor del origen.</p>
+        <div class="notes" data-i18n="fl.n2"><span>Café de especialidad</span><span>Intenso</span><span>Premium</span></div>
+        <div class="price"><div><small data-i18n="fl.pr">Precio objetivo en Alemania</small><b>€ 4,99</b></div><div style="text-align:right"><small>FOB Callao</small><b style="font-size:1.1rem">USD 3,05</b></div></div>
+      </article>
+      <article class="flavor lucu reveal">
+        <div class="jar" data-jar="lucu"></div>
+        <span class="tier" data-i18n="fl.t3">Producto insignia ★</span>
+        <h3>Lucumaní</h3>
+        <div class="de">Erdnusscreme mit Lúcuma</div>
+        <p data-i18n="fl.d3">Maní con lúcuma, la fruta ancestral del Perú. Dulce y acaramelado, no tiene equivalente en la oferta alemana. Es nuestra diferenciación cultural.</p>
+        <div class="notes" data-i18n="fl.n3"><span>Lúcuma</span><span>Acaramelado</span><span>Único en Europa</span></div>
+        <div class="price"><div><small data-i18n="fl.pr">Precio objetivo en Alemania</small><b>€ 5,19</b></div><div style="text-align:right"><small>FOB Callao</small><b style="font-size:1.1rem">USD 2,60</b></div></div>
+      </article>
+    </div>
+    <p class="ladder-note" data-i18n="fl.note">Entrada → Premium → Insignia · Kit de degustación «Ruta de Sabores del Perú»</p>
+  </div>
+</section>
+
+<section id="ingredientes">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="in.eye">Ingredientes de cada variedad</span>
+      <h2 data-i18n="in.h">Pocos ingredientes. Todos reconocibles.</h2>
+      <p class="lead" data-i18n="in.p">Formulación por peso del producto terminado, en orden decreciente según el Reglamento (UE) n.º 1169/2011.</p>
+    </div>
+    <div class="tabs" role="tablist" data-group="ing">
+      <button role="tab" aria-selected="true" data-k="choco">Chocomaní</button>
+      <button role="tab" aria-selected="false" data-k="cafe">Cafemaní</button>
+      <button role="tab" aria-selected="false" data-k="lucu">Lucumaní</button>
+    </div>
+    <div class="ing-grid">
+      <div>
+        <div class="bar" id="ingBar" aria-hidden="true"></div>
+        <ul class="ilist" id="ingList"></ul>
+      </div>
+      <div>
+        <aside class="label" aria-live="polite">
+          <h4 data-i18n="in.lab">Así se lee en la etiqueta</h4>
+          <p id="ingText"></p>
+          <div class="allergen" data-i18n="in.al"><b>Alérgeno:</b> contiene maní. <i>Enthält Erdnüsse.</i></div>
+          <div class="dez"><b>Zutaten:</b> <span id="ingDe"></span></div>
+        </aside>
+        <div class="spot" id="spot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nut" id="nutricion">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="nu.eye">Información nutricional</span>
+      <h2 data-i18n="nu.h">Energía real, proteína de verdad</h2>
+      <p class="lead" data-i18n="nu.p">Valores medios por 100 g (<i>Nährwerte pro 100 g</i>). Mueve el control para ver cuánto aporta tu porción.</p>
+    </div>
+    <div class="tabs" role="tablist" data-group="nut">
+      <button role="tab" aria-selected="true" data-k="choco">Chocomaní</button>
+      <button role="tab" aria-selected="false" data-k="cafe">Cafemaní</button>
+      <button role="tab" aria-selected="false" data-k="lucu">Lucumaní</button>
+    </div>
+    <div class="nut-grid">
+      <div>
+        <label class="portion"><span data-i18n="nu.por">Porción</span> <input type="range" id="portion" min="15" max="100" step="1" value="32" aria-describedby="porVal"> <b id="porVal">32 g</b></label>
+        <div class="ring-row" id="rings"></div>
+        <p class="fine" id="nutNote"></p>
+      </div>
+      <table class="nt" id="nutTable" aria-live="polite"></table>
+    </div>
+  </div>
+</section>
+
+<section class="attr" id="atributos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="at.eye">Características y atributos</span>
+      <h2 data-i18n="at.h">Lo que nos diferencia en el anaquel alemán</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c-4-3-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-3 8-7 11z"/><path d="M5 5l14 14"/></svg></div><h3 data-i18n="at.1h">Ohne Palmöl</h3><p data-i18n="at.1p">Formulación 100% libre de aceite de palma. Solo un toque de aceite de girasol para la textura.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19z"/><path d="M5 19l8-8"/></svg></div><h3 data-i18n="at.2h">Natural, mínimamente procesado</h3><p data-i18n="at.2p">Maní tostado, molido y mezclado. Sin conservantes, colorantes ni saborizantes artificiales.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/></svg></div><h3 data-i18n="at.3h">Origen peruano</h3><p data-i18n="at.3p">Lúcuma, café de especialidad y cacao del Perú. Cada frasco cuenta una historia de origen.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h3v3"/></svg></div><h3 data-i18n="at.4h">Trazabilidad por lote</h3><p data-i18n="at.4p">Código QR por lote, desde el productor hasta el consumidor. Un lote se ubica y se retira en menos de 24 horas.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="4" rx="1"/><path d="M7 6.5h10v13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M7 11h10v6H7"/></svg></div><h3 data-i18n="at.5h">Frasco de vidrio 220 g</h3><p data-i18n="at.5p">Vidrio transparente, tapa negra a rosca y sello de seguridad. Preserva el aroma y el sabor, y es reciclable.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><span class="tag" data-i18n="at.6t">En proceso</span><h3 data-i18n="at.6h">Bio y Fairtrade</h3><p data-i18n="at.6p">Ruta de certificación orgánica y de comercio justo, clave para el 59% de alemanes que se fija en el sello Bio.</p></div>
+    </div>
+    <div class="spec reveal">
+      <div><small data-i18n="sp.1">Etiqueta</small><b data-i18n="sp.1b">Alemán · UE 1169/2011</b></div>
+      <div><small data-i18n="sp.2">Conservación</small><b data-i18n="sp.2b">Lugar fresco y seco; remover antes de usar</b></div>
+      <div><small data-i18n="sp.3">Caja máster</small><b data-i18n="sp.3b">24 frascos (CTN)</b></div>
+      <div><small data-i18n="sp.4">Paletizado</small><b data-i18n="sp.4b">60 CTN por pallet</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="trazabilidad">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="tr.eye">Trazabilidad QR</span>
+      <h2 data-i18n="tr.h">Escanea el frasco, conoce su historia</h2>
+      <p class="lead" data-i18n="tr.p">Cada lote lleva un código impreso en la etiqueta. Escríbelo aquí o prueba uno de ejemplo para ver el recorrido completo del frasco.</p>
+    </div>
+    <div class="trace-grid">
+      <div class="lot reveal">
+        <form id="lotForm">
+          <label for="lotIn" data-i18n="tr.lab" style="flex-basis:100%;display:none">Código de lote</label>
+          <input id="lotIn" value="LU-2028-014" aria-label="Código de lote" autocomplete="off" spellcheck="false">
+          <button type="submit" data-i18n="tr.go">Rastrear</button>
+        </form>
+        <div class="chips"><button data-lot="CH-2028-009">CH-2028-009</button><button data-lot="CF-2028-011">CF-2028-011</button><button data-lot="LU-2028-014">LU-2028-014</button></div>
+        <p class="err" id="lotErr" aria-live="polite"></p>
+        <p class="demo" data-i18n="tr.demo">Demostración con datos de ejemplo del plan operativo. El formato es CH, CF o LU + año + número de lote.</p>
+      </div>
+      <div aria-live="polite">
+        <div class="lothead"><b id="lotName"></b><span class="ok-pill" data-i18n="tr.ok">✓ Lote conforme</span></div>
+        <ol class="tl" id="tl"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mkt" id="mercado">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="mk.eye">Por qué Alemania</span>
+      <h2 data-i18n="mk.h">Un nicho premium, no una guerra de precios</h2>
+      <p class="lead" data-i18n="mk.p">Somos especialistas: tiendas Bio, tiendas especializadas y e-commerce, con un precio por kilo a la altura de las marcas premium saborizadas.</p>
+    </div>
+    <div class="mkt-grid">
+      <div class="persona reveal">
+        <div class="av">AM</div>
+        <div><h3>Anna Müller, 32</h3><p data-i18n="mk.pp">Profesional de marketing en Berlín, Hamburgo, Múnich o Fráncfort. Activa, consciente y lectora de etiquetas.</p></div>
+        <ul>
+          <li data-i18n="mk.l1"><b>€ 3 000–4 500</b> de ingreso mensual</li>
+          <li data-i18n="mk.l2"><b>59%</b> de alemanes se fija en el sello Bio</li>
+          <li data-i18n="mk.l3"><b>88%</b> reconoce el Nutri-Score</li>
+        </ul>
+      </div>
+      <div class="chart reveal" id="chart">
+        <h3 data-i18n="mk.ch">Precio al consumidor por kilo en Alemania</h3>
+        <p class="sub" data-i18n="mk.cs">€/kg · competidores en REWE, EDEKA y Rossmann frente a nuestra línea</p>
+        <div id="bars"></div>
+      </div>
+    </div>
+    <div class="why">
+      <div class="reveal"><b data-i18n="wb1">+37,1%</b><span data-i18n="w1">crecimiento de importaciones HS 200811 en Alemania, 2021–2025</span></div>
+      <div class="reveal"><b data-i18n="wb2">USD 207,5 M</b><span data-i18n="w2">mercado alemán de mantequilla de maní en 2025</span></div>
+      <div class="reveal"><b data-i18n="wb3">€ 18,23 mil M</b><span data-i18n="w3">ventas del mercado Bio alemán en 2025 (+6,7%)</span></div>
+      <div class="reveal"><b data-i18n="wb4">4,79%</b><span data-i18n="w4">crecimiento anual proyectado (CAGR) del mercado</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="exportacion">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="ex.eye">Proceso de exportación a Alemania</span>
+      <h2 data-i18n="ex.h">De San Borja a Hamburgo</h2>
+      <p class="lead" data-i18n="ex.p">Mira el video del proceso y recorre cada etapa: producción, calidad, embalaje, aduana en el Callao, tránsito marítimo y llegada a las tiendas Bio de Alemania.</p>
+    </div>
+
+    <div class="player reveal">
+      <div class="screen" id="screen">
+        <video id="vid" controls preload="metadata" playsinline>
+          <source src="video/exportacion.mp4" type="video/mp4">
+        </video>
+        <div class="placeholder" id="vidPh" hidden>
+          <div><b data-i18n="ex.vt">Proceso de exportación</b><p data-i18n="ex.vp">Recorre la ruta interactiva paso a paso, de la planta en Lima a las tiendas de Alemania.</p><button id="phPlay" data-i18n="ex.vb">▶ Reproducir recorrido</button></div>
+        </div>
+      </div>
+      <div class="chapters" id="chapters"><h4 data-i18n="ex.ch">Capítulos</h4></div>
+    </div>
+
+    <div class="route reveal" id="route">
+      <svg class="map" viewBox="0 0 1000 380" role="img" aria-label="Ruta marítima Callao – Canal de Panamá – Hamburgo">
+        <rect class="sea" width="1000" height="380" rx="18"/>
+        <path class="land" d="M120 40 C180 60 230 90 250 140 C262 172 250 205 230 230 C215 255 210 290 220 330 L220 380 L160 380 C150 330 130 300 110 270 C95 245 100 215 115 190 C80 160 70 110 85 70 Z"/>
+        <path class="land" d="M740 40 C790 30 860 35 900 55 C930 75 925 110 900 125 C880 140 850 140 840 165 C830 195 800 210 770 200 C740 190 735 160 745 135 C720 120 710 90 720 65 Z"/>
+        <path class="land" d="M690 230 C730 215 780 225 800 260 C815 295 790 340 760 380 L690 380 C680 330 670 270 690 230 Z"/>
+        <path class="track" id="trackBase" d="M205 232 L175 255 C135 275 160 200 240 180 C330 155 430 115 520 140 C600 165 640 120 700 110 C740 100 770 95 805 92"/>
+        <path class="done" id="trackDone" d="M205 232 L175 255 C135 275 160 200 240 180 C330 155 430 115 520 140 C600 165 640 120 700 110 C740 100 770 95 805 92"/>
+        <g class="city" data-i="0"><circle cx="205" cy="232" r="9"/><text x="225" y="236">Lima · San Borja</text><text class="s" x="225" y="252" data-i18n="map.lima">Planta y tienda</text></g>
+        <g class="city" data-i="3"><circle cx="175" cy="255" r="9"/><text x="58" y="290">Callao</text><text class="s" x="58" y="306" data-i18n="map.callao">Puerto · FOB</text></g>
+        <g class="city" data-i="4"><circle cx="520" cy="140" r="7"/><text x="470" y="178" data-i18n="map.pan">Canal de Panamá</text><text class="s" x="470" y="194" data-i18n="map.atl">Océano Atlántico</text></g>
+        <g class="city" data-i="5"><circle cx="805" cy="92" r="9"/><text x="822" y="88">Hamburg</text><text class="s" x="822" y="104" data-i18n="map.hh">CIF · importador</text></g>
+        <g class="ship" id="ship"><circle r="15" fill="#e3a23b"/><path d="M-8 1h16l-3 5h-10z M-1 -9v10 M-1 -9l7 6h-7" fill="#173017" stroke="#173017" stroke-width="1.6" stroke-linejoin="round"/></g>
+      </svg>
+      <div class="steps" role="tablist" id="steps"></div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+      <div class="ctrl"><button class="play" id="playBtn"></button><button id="prevBtn" data-i18n="ex.prev">← Anterior</button><button id="nextBtn" data-i18n="ex.next">Siguiente →</button></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand"><span class="badge"><img src="assets/cara-verde.png" alt=""></span><span class="wm">La Vieja<br>Verde</span></div>
+        <p class="lead" data-i18n="ft.p">Proyecto de internacionalización · Desarrollo de Proyectos Internacionales (15320) · Grupo 4 · Prof. Luis Rodolfo Ubillus Ramírez</p>
+        <ul class="team">
+          <li>Carcasi Rojas, María Alejandra</li><li>González Valencia, Astrid Claraluz</li><li>Malca Benavides, Carlos David</li><li>Uribe Girón, Héctor Ricardo</li>
+          <li>Moscoso Cuya, Álvaro Thomas</li><li>Requejo Chávez, Sheila Cristina</li><li>Ortecho Castillo, Camila Ann Marie</li><li>Ochoa Maluscan, Axel Jeremy</li>
+        </ul>
+      </div>
+      <div class="qr">
+        <img src="assets/qr.png" alt="Código QR" width="140" height="140">
+        <div><b data-i18n="ft.qh">Escanea y comparte</b><p data-i18n="ft.qp">Este código lleva al espacio digital de La Vieja Verde: sabores, ingredientes, nutrición y exportación.</p></div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Boulevard de Surco 1201, San Borja · <a href="https://www.instagram.com/la_vieja_verde/" target="_blank" rel="noopener">@la_vieja_verde</a> · <a href="https://www.laviejaverdeperu.com" target="_blank" rel="noopener">laviejaverdeperu.com</a></span>
+      <span data-i18n="ft.l">Proyecto académico. Fotos de producto: La Vieja Verde.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="kbd" id="kbd"><kbd>←</kbd><kbd>→</kbd> <span data-i18n="kbd">para cambiar de sección</span></div>
+
+<script>
+/* ===== Video: pega aquí un enlace de YouTube si no usas el archivo local ===== */
+const VIDEO_YOUTUBE = ""; // ej. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+/* Capítulos del video en segundos (ajustar a los tiempos reales) */
+const CHAPTER_TIMES = [0, 20, 40, 60, 80, 100];
+
+/* ================= Traducciones (ES se lee del HTML) ================= */
+const T = {es:{}, de:{
+ "nav.historia":"Über uns","nav.sabores":"Sorten","nav.ing":"Zutaten","nav.nut":"Nährwerte","nav.attr":"Merkmale","nav.mkt":"Markt","nav.exp":"Export",
+ "hero.hand":"Geschmack, der verbindet","hero.h1":"Peruanische Aromen, die ein besseres Morgen <em>nähren</em>","hero.p":"Natürliche Erdnusscremes aus Lima mit Lúcuma, Kaffee und Kakao aus Peru. Ohne Palmöl, im Glas – für bewusste Genießer in Deutschland.","hero.b1":"Die 3 Sorten entdecken ↓","hero.b2":"Route nach Deutschland",
+ "f1":"peruanische Sorten","f2":"geröstete Erdnüsse","f3":"Palmöl","f4":"Glas","stamp":"<b>100%</b>natürlich<br>Made in Peru",
+ "story.note":"Die 1-kg-Gläser, die Lima bereits erobert haben","story.eye":"Wer wir sind","story.h":"Von einem Laden in San Borja in deutsche Regale","story.q":"„Natürliches, gesundes Essen – mit Omas Liebe gemacht.“","story.p":"La Vieja Verde ist ein Naturkostladen mit Restaurant am Boulevard de Surco in San Borja, Lima. Dort entstanden die Erdnusscremes, Joghurts und Granolas. Jetzt wagt die Linie mit peruanischen Zutaten den Schritt ins Ausland – mit einem Angebot speziell für Deutschland.","sm1":"26.400","sm3":"1 Laden","story.m1":"Follower auf Instagram","story.m2":"Produktionskapazität pro Monat","story.m3":"eigener Laden in San Borja, Lima",
+ "fl.eye":"Die drei Sorten","fl.h":"Eine Geschmacksleiter: vom Vertrauten zum Peruanischen","fl.p":"Drei SKUs für den deutschen Markt, auf Augenhöhe im Regal angeordnet: Einstieg links, Premium in der Mitte, Flaggschiff rechts.","fl.t1":"Einstiegsprodukt","fl.t2":"Premium-Segment","fl.t3":"Flaggschiff ★",
+ "fl.d1":"Geröstete Erdnüsse mit peruanischem Kakao. Ein vertrauter, beliebter Geschmack für Frühstück und Snack – der Einstieg in den deutschen Markt.","fl.d2":"Erdnüsse mit peruanischem Spezialitätenkaffee. Intensiv und raffiniert – stärkt die Premium-Positionierung und den Wert der Herkunft.","fl.d3":"Erdnüsse mit Lúcuma, der uralten Frucht Perus. Süß und karamellig, ohne Gegenstück im deutschen Angebot – unser kulturelles Alleinstellungsmerkmal.",
+ "fl.n1":"<span>Kakao</span><span>Vertraut</span><span>Für jeden Tag</span>","fl.n2":"<span>Spezialitätenkaffee</span><span>Intensiv</span><span>Premium</span>","fl.n3":"<span>Lúcuma</span><span>Karamellig</span><span>Einzigartig in Europa</span>","fl.pr":"Zielpreis in Deutschland","fl.note":"Einstieg → Premium → Flaggschiff · Verkostungsset „Geschmacksroute Perus“",
+ "in.eye":"Zutaten jeder Sorte","in.h":"Wenige Zutaten. Alle bekannt.","in.p":"Rezeptur nach Gewicht des Endprodukts, in absteigender Reihenfolge gemäß Verordnung (EU) Nr. 1169/2011.","in.lab":"So steht es auf dem Etikett","in.al":"<b>Allergen:</b> Enthält Erdnüsse.",
+ "nu.eye":"Nährwertangaben","nu.h":"Echte Energie, echtes Eiweiß","nu.p":"Durchschnittliche Nährwerte pro 100 g. Bewege den Regler, um deine Portion zu sehen.","nu.por":"Portion",
+ "at.eye":"Merkmale und Eigenschaften","at.h":"Was uns im deutschen Regal unterscheidet","at.1h":"Ohne Palmöl","at.1p":"Zu 100 % ohne Palmöl. Nur ein Hauch Sonnenblumenöl für die Textur.","at.2h":"Natürlich, minimal verarbeitet","at.2p":"Geröstet, gemahlen, gemischt. Ohne Konservierungsstoffe, Farbstoffe oder künstliche Aromen.","at.3h":"Herkunft Peru","at.3p":"Lúcuma, Spezialitätenkaffee und Kakao aus Peru. Jedes Glas erzählt eine Herkunftsgeschichte.","at.4h":"Rückverfolgbarkeit pro Charge","at.4p":"QR-Code pro Charge vom Erzeuger bis zum Verbraucher. Eine Charge lässt sich in unter 24 Stunden finden und zurückrufen.","at.5h":"220-g-Glas","at.5p":"Klarglas, schwarzer Schraubdeckel und Sicherheitssiegel. Bewahrt Aroma und Geschmack und ist recycelbar.","at.6t":"In Bearbeitung","at.6h":"Bio und Fairtrade","at.6p":"Weg zur Bio- und Fairtrade-Zertifizierung – wichtig für die 59 % der Deutschen, die auf das Bio-Siegel achten.",
+ "sp.1":"Etikett","sp.1b":"Deutsch · EU 1169/2011","sp.2":"Lagerung","sp.2b":"Kühl und trocken; vor Gebrauch umrühren","sp.3":"Umkarton","sp.3b":"24 Gläser (CTN)","sp.4":"Palettierung","sp.4b":"60 CTN pro Palette",
+ "tr.eye":"QR-Rückverfolgbarkeit","tr.h":"Glas scannen, Geschichte erfahren","tr.p":"Jede Charge trägt einen Code auf dem Etikett. Gib ihn hier ein oder probiere ein Beispiel, um den Weg des Glases zu sehen.","tr.lab":"Chargencode","tr.go":"Verfolgen","tr.demo":"Demo mit Beispieldaten aus dem Betriebsplan. Format: CH, CF oder LU + Jahr + Chargennummer.","tr.ok":"✓ Charge konform",
+ "mk.eye":"Warum Deutschland","mk.h":"Eine Premium-Nische, kein Preiskampf","mk.p":"Wir sind Spezialisten: Bioläden, Fachgeschäfte und E-Commerce, mit einem Kilopreis auf dem Niveau aromatisierter Premiummarken.","mk.pp":"Marketingfachfrau in Berlin, Hamburg, München oder Frankfurt. Aktiv, bewusst und liest Etiketten.","mk.l1":"<b>€ 3.000–4.500</b> Monatseinkommen","mk.l2":"<b>59 %</b> der Deutschen achten auf das Bio-Siegel","mk.l3":"<b>88 %</b> kennen den Nutri-Score","mk.ch":"Verbraucherpreis pro Kilo in Deutschland","mk.cs":"€/kg · Wettbewerber bei REWE, EDEKA und Rossmann im Vergleich zu unserer Linie",
+ "wb1":"+37,1 %","wb2":"USD 207,5 Mio.","wb3":"€ 18,23 Mrd.","wb4":"4,79 %","w1":"Importwachstum HS 200811 in Deutschland, 2021–2025","w2":"deutscher Erdnussbuttermarkt 2025","w3":"Umsatz im deutschen Biomarkt 2025 (+6,7 %)","w4":"prognostiziertes jährliches Marktwachstum (CAGR)",
+ "ex.eye":"Exportprozess nach Deutschland","ex.h":"Von San Borja nach Hamburg","ex.p":"Sieh dir das Video an und gehe jede Etappe durch: Produktion, Qualität, Verpackung, Zoll in Callao, Seetransport und Ankunft in deutschen Bioläden.","ex.vt":"Exportprozess","ex.vp":"Folge der interaktiven Route Schritt für Schritt – vom Werk in Lima bis in die Läden in Deutschland.","ex.vb":"▶ Route abspielen","ex.ch":"Kapitel","ex.prev":"← Zurück","ex.next":"Weiter →",
+ "map.lima":"Werk und Laden","map.callao":"Hafen · FOB","map.pan":"Panamakanal","map.atl":"Atlantik","map.hh":"CIF · Importeur",
+ "ft.p":"Internationalisierungsprojekt · Desarrollo de Proyectos Internacionales (15320) · Gruppe 4 · Prof. Luis Rodolfo Ubillus Ramírez","ft.qh":"Scannen und teilen","ft.qp":"Dieser Code führt zum digitalen Raum von La Vieja Verde: Sorten, Zutaten, Nährwerte und Export.","ft.l":"Akademisches Projekt. Produktfotos: La Vieja Verde.","kbd":"zum Wechseln der Abschnitte"
+}, en:{
+ "nav.historia":"About","nav.sabores":"Flavors","nav.ing":"Ingredients","nav.nut":"Nutrition","nav.attr":"Features","nav.mkt":"Market","nav.exp":"Export",
+ "hero.hand":"Flavors that connect","hero.h1":"Peruvian flavors that <em>nourish</em> a better tomorrow","hero.p":"Natural peanut butters made in Lima with Peruvian lúcuma, coffee and cacao. Palm-oil free, in glass jars, ready for Germany's conscious consumers.","hero.b1":"Meet the 3 flavors ↓","hero.b2":"See the route to Germany",
+ "f1":"Peruvian flavors","f2":"roasted peanuts","f3":"palm oil","f4":"glass jar","stamp":"<b>100%</b>natural<br>Made in Peru",
+ "story.note":"The 1 kg jars that already won over Lima","story.eye":"Who we are","story.h":"From a shop in San Borja to German shelves","story.q":"“Natural, healthy food, made with a grandma's love.”","story.p":"La Vieja Verde is a natural food shop and restaurant on Boulevard de Surco in San Borja, Lima, where its peanut butters, yogurts and granolas were born. Now its line of flavored butters with Peruvian ingredients goes international with an offer designed for Germany.","sm1":"26.4K","sm3":"1 shop","story.m1":"Instagram followers","story.m2":"plant capacity per month","story.m3":"own shop in San Borja, Lima",
+ "fl.eye":"The three flavors","fl.h":"A flavor ladder: from familiar to Peruvian","fl.p":"Three SKUs designed for the German market, placed at eye level: entry on the left, premium in the middle, flagship on the right.","fl.t1":"Entry product","fl.t2":"Premium segment","fl.t3":"Flagship ★",
+ "fl.d1":"Roasted peanuts with Peruvian cacao. A familiar, well-loved taste for breakfast or a snack – our door into the German market.","fl.d2":"Peanuts with Peruvian specialty coffee. Intense and refined, it strengthens our premium positioning and the value of origin.","fl.d3":"Peanuts with lúcuma, Peru's ancestral fruit. Sweet and caramel-like, with no equivalent on German shelves – our cultural differentiator.",
+ "fl.n1":"<span>Cacao</span><span>Familiar</span><span>Everyday</span>","fl.n2":"<span>Specialty coffee</span><span>Intense</span><span>Premium</span>","fl.n3":"<span>Lúcuma</span><span>Caramel notes</span><span>Unique in Europe</span>","fl.pr":"Target price in Germany","fl.note":"Entry → Premium → Flagship · “Peruvian Flavor Route” tasting kit",
+ "in.eye":"Ingredients of each variety","in.h":"Few ingredients. All recognizable.","in.p":"Formulation by weight of the finished product, in descending order under Regulation (EU) No 1169/2011.","in.lab":"How it reads on the label","in.al":"<b>Allergen:</b> contains peanuts. <i>Enthält Erdnüsse.</i>",
+ "nu.eye":"Nutrition facts","nu.h":"Real energy, real protein","nu.p":"Average values per 100 g. Move the slider to see what your portion provides.","nu.por":"Portion",
+ "at.eye":"Features and attributes","at.h":"What sets us apart on German shelves","at.1h":"Palm-oil free","at.1p":"100% free of palm oil. Just a touch of sunflower oil for texture.","at.2h":"Natural, minimally processed","at.2p":"Roasted, ground and blended. No preservatives, colorants or artificial flavors.","at.3h":"Peruvian origin","at.3p":"Lúcuma, specialty coffee and cacao from Peru. Every jar tells an origin story.","at.4h":"Batch traceability","at.4p":"A QR code per batch, from grower to consumer. Any batch can be located and recalled in under 24 hours.","at.5h":"220 g glass jar","at.5p":"Clear glass, black screw cap and safety seal. Preserves aroma and flavor, and it's recyclable.","at.6t":"In progress","at.6h":"Organic & Fairtrade","at.6p":"Path to organic and fair-trade certification – key for the 59% of Germans who look for the Bio label.",
+ "sp.1":"Label","sp.1b":"German · EU 1169/2011","sp.2":"Storage","sp.2b":"Cool, dry place; stir before use","sp.3":"Master case","sp.3b":"24 jars (CTN)","sp.4":"Palletizing","sp.4b":"60 CTN per pallet",
+ "tr.eye":"QR traceability","tr.h":"Scan the jar, discover its story","tr.p":"Every batch carries a code on the label. Type it here or try an example to see the jar's full journey.","tr.lab":"Batch code","tr.go":"Track","tr.demo":"Demo with sample data from the operations plan. Format: CH, CF or LU + year + batch number.","tr.ok":"✓ Batch compliant",
+ "mk.eye":"Why Germany","mk.h":"A premium niche, not a price war","mk.p":"We are specialists: organic stores, specialty shops and e-commerce, with a price per kilo in line with premium flavored brands.","mk.pp":"Marketing professional in Berlin, Hamburg, Munich or Frankfurt. Active, conscious and a label reader.","mk.l1":"<b>€3,000–4,500</b> monthly income","mk.l2":"<b>59%</b> of Germans look for the Bio label","mk.l3":"<b>88%</b> recognize the Nutri-Score","mk.ch":"Consumer price per kilo in Germany","mk.cs":"€/kg · competitors at REWE, EDEKA and Rossmann vs. our line",
+ "wb1":"+37.1%","wb2":"USD 207.5 M","wb3":"€18.23 bn","wb4":"4.79%","w1":"import growth for HS 200811 in Germany, 2021–2025","w2":"German peanut butter market in 2025","w3":"German organic market sales in 2025 (+6.7%)","w4":"projected annual market growth (CAGR)",
+ "ex.eye":"Export process to Germany","ex.h":"From San Borja to Hamburg","ex.p":"Watch the process video and explore each stage: production, quality, packing, customs in Callao, sea transit and arrival at German organic stores.","ex.vt":"Export process","ex.vp":"Follow the interactive route step by step, from the plant in Lima to stores in Germany.","ex.vb":"▶ Play the route","ex.ch":"Chapters","ex.prev":"← Previous","ex.next":"Next →",
+ "map.lima":"Plant and shop","map.callao":"Port · FOB","map.pan":"Panama Canal","map.atl":"Atlantic Ocean","map.hh":"CIF · importer",
+ "ft.p":"Internationalization project · Desarrollo de Proyectos Internacionales (15320) · Group 4 · Prof. Luis Rodolfo Ubillus Ramírez","ft.qh":"Scan and share","ft.qp":"This code leads to La Vieja Verde's digital space: flavors, ingredients, nutrition and export.","ft.l":"Academic project. Product photos: La Vieja Verde.","kbd":"to switch sections"
+}};
+
+/* Textos dinámicos por idioma */
+const D = {
+ es:{ingTitle:"Ingredientes",lot:"Lote",spotH:"La lúcuma, el «oro de los incas»",spotP:"Fruta nativa de los Andes peruanos, de sabor a caramelo y maple. Es poco conocida en Europa y es el corazón de Lucumaní.",
+   spot2H:"Café peruano de especialidad",spot2P:"Granos de altura cultivados en los Andes y la selva alta del Perú, molidos y mezclados con el maní.",spot3H:"Cacao peruano",spot3P:"Cacao en polvo del Perú, uno de los orígenes de cacao fino más reconocidos del mundo.",
+   nut:["Energía","Grasas","de las cuales saturadas","Hidratos de carbono","de los cuales azúcares","Fibra alimentaria","Proteínas","Sal"],nutH:["Nutriente","por 100 g","por porción"],per100:"por 100 g",
+   rings:["Proteína","Fibra","Azúcares"],ref:"de la ingesta de referencia",noteEst:"Valores calculados a partir de la formulación, a confirmar con análisis de laboratorio. ",noteLu:"Energía, grasas, hidratos, azúcares y proteínas según la ficha técnica; grasas saturadas y fibra calculadas según la formulación. ",noteRef:"Ingesta de referencia de un adulto medio (8400 kJ / 2000 kcal); fibra: 25 g recomendados.",
+   play:"▶ Reproducir recorrido",pause:"❚❚ Pausar",stage:"Etapa",of:"de",
+   lotErr:"No encontramos ese lote. Prueba con CH-2028-009, CF-2028-011 o LU-2028-014.",
+   chap:["Producción en Lima","Control de calidad y QR","Embalaje y paletizado","Aduana y embarque en el Callao","Tránsito marítimo","Llegada a Alemania"],
+   chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Convencional","Orgánico accesible","Orgánico accesible","Premium saborizado","Chocomaní – Lucumaní"]},
+ de:{ingTitle:"Zutaten",lot:"Charge",spotH:"Lúcuma, das „Gold der Inka“",spotP:"Eine in den peruanischen Anden heimische Frucht mit Karamell- und Ahornnote. In Europa kaum bekannt – das Herz von Lucumaní.",
+   spot2H:"Peruanischer Spezialitätenkaffee",spot2P:"Hochlandbohnen aus den Anden und dem Bergregenwald Perus, gemahlen und mit Erdnüssen vermischt.",spot3H:"Peruanischer Kakao",spot3P:"Kakaopulver aus Peru, einem der renommiertesten Ursprünge für Edelkakao.",
+   nut:["Brennwert","Fett","davon gesättigte Fettsäuren","Kohlenhydrate","davon Zucker","Ballaststoffe","Eiweiß","Salz"],nutH:["Nährwert","pro 100 g","pro Portion"],per100:"pro 100 g",
+   rings:["Eiweiß","Ballaststoffe","Zucker"],ref:"der Referenzmenge",noteEst:"Aus der Rezeptur berechnete Werte, durch Laboranalyse zu bestätigen. ",noteLu:"Brennwert, Fett, Kohlenhydrate, Zucker und Eiweiß laut technischem Datenblatt; gesättigte Fettsäuren und Ballaststoffe berechnet. ",noteRef:"Referenzmenge für einen durchschnittlichen Erwachsenen (8400 kJ / 2000 kcal); Ballaststoffe: 25 g empfohlen.",
+   play:"▶ Route abspielen",pause:"❚❚ Pause",stage:"Etappe",of:"von",
+   lotErr:"Charge nicht gefunden. Probiere CH-2028-009, CF-2028-011 oder LU-2028-014.",
+   chap:["Produktion in Lima","Qualitätskontrolle und QR","Verpackung und Palettierung","Zoll und Verschiffung in Callao","Seetransport","Ankunft in Deutschland"],
+   chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Konventionell","Bio, günstig","Bio, günstig","Premium aromatisiert","Chocomaní – Lucumaní"]},
+ en:{ingTitle:"Ingredients",lot:"Batch",spotH:"Lúcuma, the “gold of the Incas”",spotP:"A fruit native to the Peruvian Andes with caramel and maple notes. Little known in Europe, it is the heart of Lucumaní.",
+   spot2H:"Peruvian specialty coffee",spot2P:"High-altitude beans grown in Peru's Andes and cloud forest, ground and blended with peanuts.",spot3H:"Peruvian cacao",spot3P:"Cacao powder from Peru, one of the world's most renowned fine-cacao origins.",
+   nut:["Energy","Fat","of which saturates","Carbohydrate","of which sugars","Fibre","Protein","Salt"],nutH:["Nutrient","per 100 g","per portion"],per100:"per 100 g",
+   rings:["Protein","Fibre","Sugars"],ref:"of reference intake",noteEst:"Values calculated from the formulation, to be confirmed by lab analysis. ",noteLu:"Energy, fat, carbohydrate, sugars and protein from the spec sheet; saturates and fibre calculated. ",noteRef:"Reference intake of an average adult (8400 kJ / 2000 kcal); fibre: 25 g recommended.",
+   play:"▶ Play the route",pause:"❚❚ Pause",stage:"Stage",of:"of",
+   lotErr:"Batch not found. Try CH-2028-009, CF-2028-011 or LU-2028-014.",
+   chap:["Production in Lima","Quality control and QR","Packing and palletizing","Customs and loading in Callao","Sea transit","Arrival in Germany"],
+   chart:["Zentis Creamy","enerBiO","Alnatura","Naughty Nuts","La Vieja Verde"],chartSub:["Conventional","Affordable organic","Affordable organic","Premium flavored","Chocomaní – Lucumaní"]}
+};
+
+/* Datos de producto */
+const ING = { // nombre ES, EN, DE, color
+ mani:["Maní tostado","Roasted peanuts","Erdnüsse geröstet","#c8935a"],
+ azucar:["Azúcar de caña","Cane sugar","Rohrzucker","#d9c08f"],
+ cacao:["Cacao en polvo","Cacao powder","Kakaopulver","#5b3322"],
+ cafe:["Café peruano molido","Ground Peruvian coffee","Kaffee aus Peru, gemahlen","#3a2619"],
+ lucuma:["Polvo de lúcuma","Lúcuma powder","Lúcumapulver","#e3a23b"],
+ girasol:["Aceite de girasol","Sunflower oil","Sonnenblumenöl","#e8cf5b"],
+ sal:["Sal marina","Sea salt","Meersalz","#9fb3a8"]};
+const F = {
+ choco:{name:"Chocomaní",star:"cacao",ing:{mani:84,cacao:8,azucar:5,girasol:2.5,sal:.5},nut:{kj:2310,kcal:552,fat:42,sat:7,carb:25,sug:12,fib:10,pro:25,salt:.5},est:true},
+ cafe:{name:"Cafemaní",star:"cafe",ing:{mani:85,azucar:6.5,cafe:5,girasol:3,sal:.5},nut:{kj:2351,kcal:562,fat:43,sat:6.5,carb:25,sug:13.5,fib:9,pro:24,salt:.5},est:true},
+ lucu:{name:"Lucumaní",star:"lucuma",ing:{mani:85,azucar:6.5,lucuma:5,girasol:3,sal:.5},nut:{kj:2364,kcal:565,fat:42,sat:6.3,carb:26,sug:15,fib:7,pro:24,salt:.5},est:false}
+};
+const STEPS = {
+ es:[
+  {t:"Producción",h:"Producción en Lima",p:"El maní se recibe, se tuesta, se despielica, se muele y se mezcla con cacao, café o lúcuma, azúcar de caña, aceite de girasol y sal marina. Luego se envasa en frascos de vidrio de 220 g.",li:[["480","frascos por lote de producción"],["615 min","ciclo completo por lote"],["~800 kg/mes","capacidad de planta"]]},
+  {t:"Calidad",h:"Control de calidad y trazabilidad",p:"Cada lote de materia prima se analiza (aflatoxinas y metales pesados según límites UE). Se controla el peso, el sellado y la etiqueta en alemán. Cada frasco lleva su código de lote y su QR.",li:[["220 g ± 2%","peso controlado cada 30 frascos"],["100%","de los lotes trazables con QR"],["UE 1169/2011","etiqueta conforme"]]},
+  {t:"Embalaje",h:"Embalaje para exportación",p:"Los frascos van en cajas máster de cartón corrugado con divisores de protección y se paletizan para el transporte marítimo.",li:[["24","frascos por caja máster (CTN)"],["60 CTN","por pallet"],["11,1 kg","peso bruto por CTN"]]},
+  {t:"Callao · FOB",h:"Aduana y embarque en el Callao",p:"Transporte Lima–Callao, agente de aduanas, certificado y prueba de origen. La mercancía se entrega a bordo bajo el Incoterm FOB Callao.",li:[["USD 0,25","costo de exportación por frasco hasta FOB"],["USD 2,60–3,05","precio FOB por frasco"],["4 embarques","en el Año 1"]]},
+  {t:"Tránsito",h:"Tránsito marítimo",p:"La carga viaja consolidada (LCL) por el Pacífico, cruza el Canal de Panamá y atraviesa el Atlántico hasta el norte de Europa. El flete y el seguro los asume el importador.",li:[["LCL","carga consolidada"],["~1,5 m³","volumen por embarque en el Año 1"],["USD 0,45","flete y seguro por frasco"]]},
+  {t:"Alemania",h:"Llegada a Hamburgo y distribución",p:"El importador recibe la carga en Hamburgo (CIF) y la distribuye por los canales elegidos para un consumidor consciente, dispuesto a pagar por calidad y origen.",li:[["45%","tiendas Bio (2 700 frascos)"],["30%","e-commerce (1 800 frascos)"],["25%","supermercados y droguerías (1 500)"]]}],
+ de:[
+  {t:"Produktion",h:"Produktion in Lima",p:"Die Erdnüsse werden angenommen, geröstet, enthäutet, gemahlen und mit Kakao, Kaffee oder Lúcuma, Rohrzucker, Sonnenblumenöl und Meersalz gemischt. Danach werden sie in 220-g-Gläser abgefüllt.",li:[["480","Gläser pro Produktionscharge"],["615 Min.","Zykluszeit pro Charge"],["~800 kg/Monat","Werkskapazität"]]},
+  {t:"Qualität",h:"Qualitätskontrolle und Rückverfolgbarkeit",p:"Jede Rohstoffcharge wird geprüft (Aflatoxine und Schwermetalle nach EU-Grenzwerten). Gewicht, Versiegelung und deutsches Etikett werden kontrolliert. Jedes Glas trägt Chargencode und QR.",li:[["220 g ± 2 %","Gewichtskontrolle alle 30 Gläser"],["100 %","der Chargen per QR rückverfolgbar"],["EU 1169/2011","konformes Etikett"]]},
+  {t:"Verpackung",h:"Exportverpackung",p:"Die Gläser kommen in Umkartons aus Wellpappe mit Schutzeinsätzen und werden für den Seetransport palettiert.",li:[["24","Gläser pro Umkarton (CTN)"],["60 CTN","pro Palette"],["11,1 kg","Bruttogewicht pro CTN"]]},
+  {t:"Callao · FOB",h:"Zoll und Verschiffung in Callao",p:"Transport Lima–Callao, Zollagent, Ursprungszeugnis. Die Ware wird gemäß Incoterm FOB Callao an Bord geliefert.",li:[["USD 0,25","Exportkosten pro Glas bis FOB"],["USD 2,60–3,05","FOB-Preis pro Glas"],["4 Verschiffungen","im 1. Jahr"]]},
+  {t:"Seetransport",h:"Seetransport",p:"Die Ware reist als Sammelladung (LCL) über den Pazifik, durch den Panamakanal und über den Atlantik nach Nordeuropa. Fracht und Versicherung trägt der Importeur.",li:[["LCL","Sammelladung"],["~1,5 m³","Volumen pro Verschiffung im 1. Jahr"],["USD 0,45","Fracht und Versicherung pro Glas"]]},
+  {t:"Deutschland",h:"Ankunft in Hamburg und Vertrieb",p:"Der Importeur übernimmt die Ware in Hamburg (CIF) und verteilt sie über die gewählten Kanäle an bewusste Verbraucher, die für Qualität und Herkunft zahlen.",li:[["45 %","Bioläden (2.700 Gläser)"],["30 %","E-Commerce (1.800 Gläser)"],["25 %","Supermärkte und Drogerien (1.500)"]]}],
+ en:[
+  {t:"Production",h:"Production in Lima",p:"Peanuts are received, roasted, skinned, ground and blended with cacao, coffee or lúcuma, cane sugar, sunflower oil and sea salt, then filled into 220 g glass jars.",li:[["480","jars per production batch"],["615 min","full cycle per batch"],["~800 kg/month","plant capacity"]]},
+  {t:"Quality",h:"Quality control and traceability",p:"Every raw-material lot is tested (aflatoxins and heavy metals within EU limits). Weight, sealing and the German label are checked. Each jar carries its batch code and QR.",li:[["220 g ± 2%","weight checked every 30 jars"],["100%","of batches QR-traceable"],["EU 1169/2011","compliant label"]]},
+  {t:"Packing",h:"Export packing",p:"Jars go into corrugated master cases with protective dividers and are palletized for sea freight.",li:[["24","jars per master case (CTN)"],["60 CTN","per pallet"],["11.1 kg","gross weight per CTN"]]},
+  {t:"Callao · FOB",h:"Customs and loading in Callao",p:"Lima–Callao haulage, customs broker, certificate of origin. Goods are delivered on board under the FOB Callao Incoterm.",li:[["USD 0.25","export cost per jar up to FOB"],["USD 2.60–3.05","FOB price per jar"],["4 shipments","in Year 1"]]},
+  {t:"Sea transit",h:"Sea transit",p:"Cargo travels consolidated (LCL) across the Pacific, through the Panama Canal and over the Atlantic to northern Europe. Freight and insurance are paid by the importer.",li:[["LCL","consolidated cargo"],["~1.5 m³","volume per shipment in Year 1"],["USD 0.45","freight and insurance per jar"]]},
+  {t:"Germany",h:"Arrival in Hamburg and distribution",p:"The importer receives the cargo in Hamburg (CIF) and distributes it through channels chosen for conscious consumers willing to pay for quality and origin.",li:[["45%","organic stores (2,700 jars)"],["30%","e-commerce (1,800 jars)"],["25%","supermarkets and drugstores (1,500)"]]}]
+};
+const STEP_GEO=[{city:0,pos:0},{city:0,pos:0},{city:0,pos:0},{city:3,pos:"callao"},{city:4,pos:.6},{city:5,pos:1}];
+
+let lang='es';
+const tr=(es,en,de)=>lang==='de'?de:lang==='en'?en:es;
+const nf=n=>lang==='en'?String(n):String(n).replace('.',',');
+const $=s=>document.querySelector(s);
+
+/* ---- frascos SVG ---- */
+const JAR={choco:["#5b3322","#7a4a33","Schokolade"],cafe:["#4a3122","#6b4a35","Kaffee"],lucu:["#d7a04e","#e8b96a","Lúcuma"]};
+document.querySelectorAll('[data-jar]').forEach(el=>{
+  const k=el.dataset.jar,[c1,c2,de]=JAR[k];
+  el.innerHTML=`<svg viewBox="0 0 160 220" aria-hidden="true"><defs><linearGradient id="g${k}" x1="0" x2="1"><stop offset="0" stop-color="${c1}"/><stop offset=".5" stop-color="${c2}"/><stop offset="1" stop-color="${c1}"/></linearGradient></defs>
+  <rect x="22" y="12" width="116" height="30" rx="6" fill="#141414"/><rect x="22" y="30" width="116" height="4" fill="#2b2b2b"/>
+  <path d="M18 46h124c6 0 10 4 10 10v138c0 10-8 18-18 18H26c-10 0-18-8-18-18V56c0-6 4-10 10-10z" fill="url(#g${k})" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+  <rect x="16" y="82" width="128" height="96" rx="4" fill="#f4ead6"/>
+  <image href="assets/cara-verde.png" x="28" y="89" width="22" height="24"/>
+  <text x="54" y="99" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="9" fill="#1f3a1f">LA VIEJA</text><text x="54" y="109" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="9" fill="#1f3a1f">VERDE</text>
+  <text x="30" y="132" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="13" fill="#1c2b1a">ERDNUSSCREME</text>
+  <text x="30" y="148" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="12" fill="#1c2b1a">mit ${de}</text>
+  <text x="30" y="168" font-family="DM Sans,sans-serif" font-weight="700" font-size="10" fill="#1c2b1a">220 g</text>
+  <text x="134" y="168" text-anchor="end" font-family="DM Sans,sans-serif" font-weight="700" font-size="7.5" fill="#3f7a33">OHNE PALMÖL</text>
+  <path d="M28 52c-4 0-6 4-6 8v126" stroke="rgba(255,255,255,.28)" stroke-width="5" stroke-linecap="round" fill="none"/></svg>`;
+});
+
+/* ---- pestañas ---- */
+const tabState={};
+function tabs(group,render){
+  const btns=[...document.querySelectorAll(`[data-group="${group}"] button`)];
+  const pick=b=>{btns.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});tabState[group]=b.dataset.k;render(b.dataset.k)};
+  btns.forEach((b,i)=>{b.onclick=()=>pick(b);b.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();e.stopPropagation();const n=btns[(i+(e.key==='ArrowRight'?1:btns.length-1))%btns.length];n.focus();pick(n)}}});
+  pick(btns[0]);
+}
+const nameOf=k=>ING[k][lang==='en'?1:lang==='de'?2:0];
+function renderIng(k){
+  const f=F[k],sorted=Object.entries(f.ing).sort((a,b)=>b[1]-a[1]);
+  $('#ingBar').innerHTML=sorted.map(([i,p])=>`<span style="flex-grow:${p};background:${ING[i][3]}">${p>=5?nf(p)+'%':''}</span>`).join('');
+  $('#ingList').innerHTML=sorted.map(([i,p])=>`<li><i style="background:${ING[i][3]}"></i><div><b>${nameOf(i)}</b><small>${lang==='de'?ING[i][0]:ING[i][2]}</small></div><b>${nf(p)}%</b></li>`).join('');
+  const pct=i=>['mani','cacao','cafe','lucuma'].includes(i);
+  $('#ingText').innerHTML=`<b>${f.name}:</b> `+sorted.map(([i,p])=>pct(i)?`${nameOf(i).toLowerCase()} (${nf(p)}%)`:nameOf(i).toLowerCase()).join(', ')+'.';
+  $('#ingDe').textContent=sorted.map(([i,p])=>pct(i)?`${ING[i][2]} (${String(p).replace('.',',')} %)`:ING[i][2]).join(', ')+'.';
+  const d=D[lang],s={lucuma:[d.spotH,d.spotP,'Lú'],cafe:[d.spot2H,d.spot2P,'Ca'],cacao:[d.spot3H,d.spot3P,'Co']}[f.star];
+  $('#spot').innerHTML=`<span class="dot">${s[2]}</span><div><b>${s[0]}</b><p>${s[1]}</p></div>`;
+}
+function renderNut(k){
+  const n=F[k].nut,d=D[lang],g=+$('#portion').value,pp=v=>nf(Math.round(v*g/100*10)/10);
+  $('#porVal').textContent=g+' g';
+  const vals=[[`${n.kj} kJ / ${n.kcal} kcal`,`${Math.round(n.kj*g/100)} kJ / ${Math.round(n.kcal*g/100)} kcal`],[nf(n.fat)+' g',pp(n.fat)+' g',0],[nf(n.sat)+' g',pp(n.sat)+' g',1],[nf(n.carb)+' g',pp(n.carb)+' g'],[nf(n.sug)+' g',pp(n.sug)+' g',1],[nf(n.fib)+' g',pp(n.fib)+' g'],[nf(n.pro)+' g',pp(n.pro)+' g'],[nf(n.salt)+' g',pp(n.salt)+' g']];
+  const sec=['Brennwert','Fett','davon gesättigte Fettsäuren','Kohlenhydrate','davon Zucker','Ballaststoffe','Eiweiß','Salz'];
+  $('#nutTable').innerHTML=`<caption>${F[k].name} · ${d.per100}</caption><thead><tr><th>${d.nutH[0]}</th><th style="text-align:right">${d.nutH[1]}</th><th>${d.nutH[2]} <span style="text-transform:none">(${g} g)</span></th></tr></thead><tbody>`+
+    vals.map((v,i)=>`<tr class="${v[2]?'sub':''}"><td>${d.nut[i]}${lang!=='de'?`<span class="sec">${sec[i]}</span>`:''}</td><td style="text-align:right;font-weight:700">${v[0]}</td><td>${v[1]}</td></tr>`).join('')+'</tbody>';
+  const R=[[d.rings[0],n.pro,50],[d.rings[1],n.fib,25],[d.rings[2],n.sug,90]],C=2*Math.PI*36;
+  $('#rings').innerHTML=R.map(([l,v,max])=>{const amt=v*g/100,pc=Math.round(amt/max*100);return `<div class="ring"><svg viewBox="0 0 84 84"><circle class="bg" cx="42" cy="42" r="36"/><circle class="fg" cx="42" cy="42" r="36" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-Math.min(amt/max,1))}"/></svg><b>${nf(Math.round(amt*10)/10)} g</b><span>${l}<br>${pc}% ${d.ref}</span></div>`}).join('');
+  $('#nutNote').textContent=(F[k].est?d.noteEst:d.noteLu)+d.noteRef;
+}
+tabs('ing',renderIng); tabs('nut',renderNut);
+$('#portion').oninput=()=>renderNut(tabState.nut);
+
+/* ---- trazabilidad (demo) ---- */
+const LOTS={CH:'choco',CF:'cafe',LU:'lucu'};
+function trace(code){
+  code=(code||'').trim().toUpperCase().replace(/\s+/g,'');
+  const m=code.match(/^(CH|CF|LU)-?(20\d\d)-?(\d{1,3})$/);
+  if(!m){$('#lotErr').textContent=D[lang].lotErr;return}
+  $('#lotErr').textContent='';
+  const k=LOTS[m[1]],yr=m[2],n=+m[3],f=F[k],star={choco:['cacao','Cacao'],cafe:['cafe','Café'],lucu:['lucuma','Lúcuma']}[k];
+  const day=(d)=>{const dt=new Date(+yr,1,1+n*7+d);return dt.toLocaleDateString(lang==='de'?'de-DE':lang==='en'?'en-GB':'es-PE',{day:'2-digit',month:'short',year:'numeric'})};
+  $('#lotName').textContent=`${f.name} · ${D[lang].lot} ${m[1]}-${yr}-${String(n).padStart(3,'0')}`;
+  const ev=tr(
+   [["Materia prima recibida",`Maní seleccionado y ${nameOf(star[0]).toLowerCase()} con análisis de aflatoxinas y metales pesados: conforme.`],["Producción y envasado","Lote de 480 frascos de 220 g. Tostado, molienda, mezcla, llenado y sellado en Lima."],["Control de calidad","Peso, cierre y etiqueta alemana verificados. Muestra de retención guardada."],["Embarque FOB Callao","20 cajas máster consolidadas (LCL) rumbo a Hamburgo."],["Llegada a Hamburgo","Recibido por el importador y distribuido a tiendas Bio y e-commerce."]],
+   [["Raw materials received",`Selected peanuts and ${nameOf(star[0]).toLowerCase()} tested for aflatoxins and heavy metals: compliant.`],["Production and filling","Batch of 480 × 220 g jars. Roasted, ground, blended, filled and sealed in Lima."],["Quality control","Weight, closure and German label verified. Retention sample stored."],["FOB Callao shipment","20 master cases consolidated (LCL) bound for Hamburg."],["Arrival in Hamburg","Received by the importer and distributed to organic stores and e-commerce."]],
+   [["Rohstoffe angenommen",`Ausgewählte Erdnüsse und ${ING[star[0]][2]} auf Aflatoxine und Schwermetalle geprüft: konform.`],["Produktion und Abfüllung","Charge mit 480 Gläsern à 220 g. In Lima geröstet, gemahlen, gemischt, abgefüllt und versiegelt."],["Qualitätskontrolle","Gewicht, Verschluss und deutsches Etikett geprüft. Rückstellmuster eingelagert."],["Verschiffung FOB Callao","20 Umkartons als Sammelladung (LCL) nach Hamburg."],["Ankunft in Hamburg","Vom Importeur übernommen und an Bioläden und E-Commerce verteilt."]]);
+  const offs=[0,3,4,9,42];
+  $('#tl').innerHTML=ev.map((e,i)=>`<li class="ok" style="animation-delay:${i*.09}s"><time>${day(offs[i])}</time><b>${e[0]}</b><span>${e[1]}</span></li>`).join('');
+}
+$('#lotForm').onsubmit=e=>{e.preventDefault();trace($('#lotIn').value)};
+document.querySelectorAll('[data-lot]').forEach(b=>b.onclick=()=>{$('#lotIn').value=b.dataset.lot;trace(b.dataset.lot)});
+
+/* ---- gráfico €/kg ---- */
+const PRICES=[[9.11],[7.56],[9.96],[19.96],[20.41,23.59]];
+function renderChart(){
+  const d=D[lang],max=25;
+  $('#bars').innerHTML=PRICES.map((p,i)=>`<div class="row ${i===4?'us':''}"><div class="n">${d.chart[i]}<small>${d.chartSub[i]}</small></div><div class="t"><i data-w="${p[p.length-1]/max*100}"></i></div><div class="v">${p.map(nf).join('–')}</div></div>`).join('');
+  if($('#chart').classList.contains('in'))growBars();
+}
+const growBars=()=>requestAnimationFrame(()=>document.querySelectorAll('#bars i').forEach(i=>i.style.width=i.dataset.w+'%'));
+renderChart();
+
+/* ---- ruta de exportación ---- */
+const base=$('#trackBase'),done=$('#trackDone'),ship=$('#ship'),stepsEl=$('#steps'),detail=$('#detail'),playBtn=$('#playBtn');
+const L=base.getTotalLength(); done.style.strokeDasharray=L; done.style.strokeDashoffset=L;
+STEP_GEO[3].pos=Math.hypot(30,23)/L;
+let cur=0,timer=null;
+function buildSteps(){stepsEl.innerHTML='';STEPS[lang].forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML=`<b>0${i+1}</b>${s.t}`;b.onclick=()=>{stop();go(i)};stepsEl.appendChild(b)})}
+function go(i){
+  cur=(i+6)%6;const s=STEPS[lang][cur],g=STEP_GEO[cur],d=D[lang];
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-selected',j===cur));
+  done.style.strokeDashoffset=L*(1-g.pos);
+  const pt=base.getPointAtLength(L*g.pos);ship.style.transform=`translate(${pt.x}px,${pt.y}px)`;
+  document.querySelectorAll('.map .city').forEach(c=>c.classList.toggle('on',STEP_GEO.slice(0,cur+1).some(x=>x.city==c.dataset.i)));
+  detail.innerHTML=`<div><span class="eyebrow">${d.stage} ${cur+1} ${d.of} 6</span><h3>${s.h}</h3><p>${s.p}</p></div><ul>${s.li.map(([a,b])=>`<li><b>${a}</b> · ${b}</li>`).join('')}</ul>`;
+  [...chEl.querySelectorAll('button')].forEach((b,j)=>b.classList.toggle('on',j===cur));
+}
+function stop(){clearInterval(timer);timer=null;playBtn.textContent=D[lang].play}
+function play(){if(timer)return stop();if(cur===5)go(0);playBtn.textContent=D[lang].pause;timer=setInterval(()=>{if(cur>=5)return stop();go(cur+1)},3400)}
+playBtn.onclick=play;
+$('#prevBtn').onclick=()=>{stop();go(cur-1)};
+$('#nextBtn').onclick=()=>{stop();go(cur+1)};
+
+/* ---- video + capítulos ---- */
+const vid=$('#vid'),ph=$('#vidPh'),chEl=$('#chapters');
+let hasVideo=false;
+const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+function buildChapters(){
+  chEl.querySelectorAll('button').forEach(b=>b.remove());
+  D[lang].chap.forEach((c,i)=>{const b=document.createElement('button');b.innerHTML=`<time>${hasVideo?fmt(CHAPTER_TIMES[i]):'0'+(i+1)}</time><span>${c}</span>`;b.onclick=()=>{stop();go(i);if(hasVideo&&vid.readyState){vid.currentTime=CHAPTER_TIMES[i];vid.play()}else $('#route').scrollIntoView({behavior:'smooth',block:'center'})};chEl.appendChild(b)});
+}
+function noVideo(){hasVideo=false;vid.hidden=true;ph.hidden=false;buildChapters();go(cur)}
+if(VIDEO_YOUTUBE){
+  const id=(VIDEO_YOUTUBE.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)||[])[1];
+  if(id){hasVideo=false;$('#screen').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Video" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`}
+}else{
+  vid.querySelector('source').addEventListener('error',noVideo);
+  vid.addEventListener('loadedmetadata',()=>{hasVideo=true;buildChapters();go(cur)});
+  vid.addEventListener('timeupdate',()=>{let k=0;CHAPTER_TIMES.forEach((t,i)=>{if(vid.currentTime>=t)k=i});if(k!==cur)go(k)});
+}
+$('#phPlay').onclick=()=>{$('#route').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>{if(!timer)play()},500)};
+
+/* ---- idioma ---- */
+document.querySelectorAll('[data-i18n]').forEach(el=>T.es[el.dataset.i18n]=el.innerHTML);
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=T[l][el.dataset.i18n];if(v!=null)el.innerHTML=v});
+  renderIng(tabState.ing);renderNut(tabState.nut);renderChart();buildSteps();buildChapters();go(cur);stop();
+  if($('#tl').children.length)trace($('#lotIn').value);
+  try{localStorage.setItem('lvv-lang',l)}catch(e){}
+}
+document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let saved='es';try{saved=localStorage.getItem('lvv-lang')||'es'}catch(e){}
+const qp=new URLSearchParams(location.search).get('lang');
+setLang(['es','de','en'].includes(qp)?qp:saved);
+trace('LU-2028-014');
+
+/* ---- reveal, nav activa, modo presentación ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');if(e.target.id==='chart')growBars();io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll('.nav ul a')],secs=[$('#inicio'),...document.querySelectorAll('main section[id]')];
+const curSec=()=>{const y=scrollY+innerHeight*.4;let k=0;secs.forEach((s,i)=>{if(s.offsetTop<=y)k=i});return k};
+const markNav=()=>{const id=secs[curSec()].id;links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id))};
+addEventListener('scroll',markNav,{passive:true});markNav();
+addEventListener('keydown',e=>{
+  if(e.target.closest('input,textarea,[role=tablist],video')||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const k=Math.max(0,Math.min(secs.length-1,curSec()+(e.key==='ArrowRight'?1:-1)));secs[k].scrollIntoView({behavior:'smooth'})}
+});
+const kbd=$('#kbd');setTimeout(()=>kbd.classList.add('show'),1500);setTimeout(()=>kbd.classList.remove('show'),7500);
+</script>
+</body>
+</html>
