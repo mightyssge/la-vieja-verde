@@ -37,14 +37,8 @@ section{position:relative}
 .sec{padding:clamp(80px,10vw,130px) 0}
 .h2{font-size:clamp(2.8rem,7vw,6rem)}
 
-/* ticker */
-.tick{background:var(--green);color:var(--cream);overflow:hidden;white-space:nowrap;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 0}
-.tick .row{display:inline-flex;gap:38px;animation:mq 38s linear infinite;padding-left:38px}
-.tick span::after{content:"★";margin-left:38px;color:#f4a23a}
-.band{background:var(--fdeep);color:var(--fink);transition:background .6s var(--ease)}
-body[data-f="lucu"] .band{color:#FFE0AE}
-.band .row{font-family:var(--display);font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:.03em;padding:16px 0 16px 38px;animation-duration:30s}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* franja andina */
+.andes{height:14px;background-color:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='14'%3E%3Cpath d='M24 1h8v4h4v4h-4v4h-8V9h-4V5h4z' fill='%23F4A23A'/%3E%3Cpath d='M26 5h4v4h-4z' fill='%231f3a1f'/%3E%3Cpath d='M0 14 7 7l7 7zM42 14l7-7 7 7z' fill='%23a9d084'/%3E%3C/svg%3E");background-size:56px 14px}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,244,226,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,26,14,.08)}
@@ -62,68 +56,90 @@ body[data-f="lucu"] .band{color:#FFE0AE}
 @media (max-width:1100px){.nav ul{display:none}}
 
 /* hero */
-.hero{background:var(--fc);color:var(--fink);overflow:hidden;transition:background .6s var(--ease),color .6s var(--ease)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center;min-height:min(720px,calc(100svh - 190px));padding:28px 0 18px}
-.stage{max-height:min(600px,calc(100svh - 230px))}
-.tier{display:inline-flex;gap:8px;align-items:center;background:var(--fdeep);color:var(--fc);padding:7px 14px;border-radius:99px;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.hero{position:relative;background:var(--fc);color:var(--fink);overflow:hidden;transition:background .7s var(--ease),color .7s var(--ease);isolation:isolate}
+.bgs .bg{position:absolute;inset:0;background-size:cover;background-position:right center;opacity:0;transform:scale(1.06);transition:opacity .9s var(--ease),transform 1.6s var(--ease);z-index:-2}
+.bgs .bg.on{opacity:1;transform:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--fc) 0%,var(--fc) 34%,transparent 60%),radial-gradient(ellipse at 72% 55%,rgba(0,0,0,.18),transparent 60%);transition:background .7s}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;min-height:min(700px,calc(100svh - 200px));padding:36px 0 10px}
+.mit{font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1;transform:rotate(-2deg);transform-origin:left;margin-bottom:10px}
+.tier{display:inline-flex;gap:8px;align-items:center;background:var(--fdeep);color:var(--fc);padding:7px 14px;border-radius:6px;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
 body[data-f="choco"] .tier,body[data-f="cafe"] .tier{background:var(--fink);color:var(--fc)}
-.hname{font-size:clamp(4.6rem,min(11vw,17vh),10rem);margin:14px 0 6px;color:var(--fdeep)}
+.hname{font-size:clamp(4rem,min(9.2vw,15vh),8.6rem);margin:16px 0 14px;color:var(--fdeep);white-space:nowrap;line-height:.95}
 body[data-f="choco"] .hname,body[data-f="cafe"] .hname{color:var(--fink)}
-.hname span{display:block;padding-top:.06em}
-.hname span:nth-child(2){padding-left:.5em}
-.htag{font-size:clamp(1.6rem,2.8vw,2.4rem);margin-bottom:12px;transform:rotate(-1.5deg);transform-origin:left}
-.hdesc{font-size:1.1rem;max-width:44ch;font-weight:500;opacity:.92}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
-.chips span{border:2px solid currentColor;border-radius:8px;padding:5px 10px;font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
-.buy{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}
-.buy .pr{font-family:var(--display);font-size:3rem;line-height:1}
-.buy small{display:block;font-weight:700;font-size:.78rem;opacity:.8}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 22px;border-radius:12px;background:var(--fdeep);color:var(--fc);border:2px solid var(--fdeep);transition:transform .2s var(--ease)}
+.hname .l{display:inline-block;opacity:0;transform:translateY(.4em) rotate(4deg);animation:rise .7s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.htag{font-size:1.22rem;font-weight:800;margin-bottom:8px}
+.hdesc{font-size:1.04rem;max-width:42ch;font-weight:500;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
+.chips span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.22);backdrop-filter:blur(4px);border-radius:99px;padding:6px 12px;font-weight:700;font-size:.8rem}
+.chips span::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.7}
+.buy{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.buy .pr{font-family:var(--display);font-size:2.8rem;line-height:1}
+.buy small{display:block;font-weight:700;font-size:.76rem;opacity:.8}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 22px;border-radius:99px;background:var(--fdeep);color:var(--fc);border:2px solid var(--fdeep);transition:transform .2s var(--ease)}
 body[data-f="choco"] .hero .btn,body[data-f="cafe"] .hero .btn{background:var(--fink);color:var(--fc);border-color:var(--fink)}
-.btn.out{background:transparent;color:inherit;border-color:currentColor}
 body[data-f] .hero .btn.out{background:transparent;color:inherit;border-color:currentColor}
 .btn:hover{transform:translateY(-2px)}
-.stage{position:relative;aspect-ratio:1;max-height:640px;justify-self:center;width:100%}
-.disc{position:absolute;inset:6%;border-radius:50%;background:var(--fsoft);transition:background .6s var(--ease)}
-body[data-f="lucu"] .disc{background:#FBD08A}
-.disc::after{content:"";position:absolute;inset:-5%;border-radius:50%;border:2px dashed currentColor;opacity:.25;animation:spin 60s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.jar{position:absolute;inset:0;display:grid;place-items:center}
-.jar img{width:84%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));transition:opacity .45s var(--ease),transform .6s var(--ease)}
-.jar img.out{opacity:0;transform:translateY(30px) rotate(-6deg) scale(.92)}
-.jar img.in{animation:float 6s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-12px) rotate(1deg)}}
-.stk{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:800;line-height:1;box-shadow:0 14px 30px -12px rgba(0,0,0,.4)}
-.stk.a{right:2%;top:10%;width:132px;height:132px;background:var(--paper);color:var(--ink);font-family:var(--hand);font-size:1.6rem;transform:rotate(10deg);padding:14px}
-.stk.b{left:2%;bottom:16%;width:104px;height:104px;background:var(--fdeep);color:#fff;font-size:.72rem;letter-spacing:.06em}
-.stk.b b{font-family:var(--display);font-size:2.3rem;font-weight:400;display:block}
-.picker{display:flex;gap:10px;flex-wrap:wrap;padding:0 0 34px}
-.picker button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:6px 18px 6px 6px;border-radius:99px;font-weight:800;font-size:.88rem;background:rgba(255,255,255,.18);border:2px solid transparent;transition:background .25s,border-color .25s}
-.picker button img{width:40px;height:40px;object-fit:contain;border-radius:50%;background:var(--paper);padding:3px}
-.picker button[aria-pressed=true]{background:var(--fdeep);color:#fff;border-color:var(--fdeep)}
-body[data-f="choco"] .picker button[aria-pressed=true],body[data-f="cafe"] .picker button[aria-pressed=true]{background:var(--fink);color:var(--fc)}
-.picker button:focus-visible{outline:3px solid var(--fink)}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;min-height:0}.stage{max-width:360px;order:-1;max-height:none}.stk.a{width:104px;height:104px;font-size:1.25rem}.hname{font-size:clamp(4.2rem,22vw,7rem)}}
+.stage{position:relative;width:100%;height:min(580px,calc(100svh - 250px));min-height:380px;justify-self:center}
+.stage .jar{position:absolute;inset:4% 10% 2%;display:flex;align-items:center;justify-content:center;z-index:2}
+.stage .jar img{height:100%;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 34px 40px rgba(0,0,0,.42));transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.stage .jar img.out{opacity:0;transform:translateY(40px) scale(.9)}
+.stage .jar img.in{animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(1.5deg)}}
+.fl{position:absolute;z-index:3;filter:drop-shadow(0 18px 22px rgba(0,0,0,.35));transition:transform .25s linear,opacity .5s var(--ease);will-change:transform;pointer-events:none}
+.fl.hide{opacity:0}
+.fl.p1{width:24%;left:2%;top:10%}
+.fl.p2{width:20%;right:2%;bottom:4%}
+.fl.p3{width:18%;right:6%;top:4%;z-index:1}
+.ktag{position:absolute;z-index:4;left:4%;bottom:12%;background:#e9d4ad;color:#2a1a0e;padding:14px 18px 12px 30px;border-radius:6px 14px 14px 6px;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);font-family:var(--hand);font-size:1.45rem;line-height:1;transform:rotate(-8deg);box-shadow:0 14px 24px -12px rgba(0,0,0,.5)}
+.ktag::before{content:"";position:absolute;left:12px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--fc)}
+.ktag small{display:block;font-family:var(--body);font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-top:4px}
+.lids{display:flex;gap:26px;padding:10px 0 70px;position:relative;z-index:2}
+.lids button{all:unset;cursor:pointer;display:grid;justify-items:center;gap:8px;font-weight:800;font-size:.84rem}
+.lids .lid{width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f7e2a2,#c9a043 45%,#8a6a1c 100%);display:grid;place-items:center;box-shadow:0 8px 16px -6px rgba(0,0,0,.45),inset 0 -3px 0 rgba(0,0,0,.18);transition:transform .35s var(--ease)}
+.lids .lid i{width:58%;height:58%;border-radius:50%;box-shadow:inset 0 2px 4px rgba(0,0,0,.35)}
+.lids button:hover .lid{transform:translateY(-4px) rotate(-20deg)}
+.lids button[aria-pressed=true] .lid{transform:scale(1.14);box-shadow:0 0 0 4px var(--fink),0 10px 20px -6px rgba(0,0,0,.5)}
+body[data-f="lucu"] .lids button[aria-pressed=true] .lid{box-shadow:0 0 0 4px var(--fdeep),0 10px 20px -6px rgba(0,0,0,.5)}
+.lids .bar{width:62px;height:3px;border-radius:3px;background:rgba(0,0,0,.15);overflow:hidden}
+.lids .bar b{display:block;height:100%;width:0;background:currentColor}
+.lids button[aria-pressed=true] .bar b.go{animation:fill 5.2s linear forwards}
+@keyframes fill{to{width:100%}}
+.lids button:focus-visible{outline:3px solid var(--fink);outline-offset:4px;border-radius:12px}
+.drip{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;z-index:1;display:block}
+@media (max-width:900px){.hgrid{grid-template-columns:1fr;min-height:0}.stage{order:-1;max-width:400px;height:360px;min-height:0}.hero::before{background:linear-gradient(180deg,transparent 0%,var(--fc) 42%)}.bgs .bg{background-position:72% top;background-size:auto 60%;background-repeat:no-repeat}.hname{font-size:clamp(3.2rem,15vw,5rem)}.lids{justify-content:center}}
 
 /* flavors grid */
+.sab{background:var(--cream);overflow:hidden}
+.deco{position:absolute;pointer-events:none;filter:drop-shadow(0 16px 20px rgba(0,0,0,.25));z-index:0}
+.deco.d1{width:200px;left:-60px;top:80px;transform:rotate(-20deg)}
+.deco.d2{width:170px;right:-40px;top:40px;transform:rotate(25deg)}
+.deco.d3{width:150px;right:6%;bottom:30px;transform:rotate(-10deg)}
+.sab .wrap{position:relative;z-index:1}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-.fcard{border-radius:var(--r);overflow:hidden;background:var(--paper);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.fcard:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(42,26,14,.5)}
-.fcard .ph{aspect-ratio:1/1;display:grid;place-items:center;position:relative;overflow:hidden}
-.fcard .ph img{width:78%;transition:transform .6s var(--ease);filter:drop-shadow(0 20px 24px rgba(0,0,0,.3))}
-.fcard:hover .ph img{transform:scale(1.06) rotate(-3deg)}
-.fcard .ph .tg{position:absolute;z-index:2;left:16px;top:16px;background:var(--paper);color:var(--ink);font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:99px}
+.fcard{border-radius:var(--r);overflow:hidden;background:var(--paper);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);box-shadow:0 20px 40px -30px rgba(42,26,14,.5)}
+.fcard:hover{transform:translateY(-8px);box-shadow:0 34px 60px -30px rgba(42,26,14,.6)}
+.fcard .ph{aspect-ratio:1/1.02;display:grid;place-items:end center;position:relative;overflow:hidden;background-size:cover;background-position:82% center}
+.fcard .ph::after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(0,0,0,.25))}
+.fcard .ph img{width:70%;margin-bottom:6%;position:relative;z-index:1;transition:transform .6s var(--ease);filter:drop-shadow(0 22px 24px rgba(0,0,0,.4))}
+.fcard:hover .ph img{transform:translateY(-8px) rotate(-3deg)}
+.fcard .ph .tg{position:absolute;z-index:2;left:16px;top:16px;background:var(--paper);color:var(--ink);font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
+.fcard .ph .num{position:absolute;z-index:2;right:16px;top:8px;font-family:var(--display);font-size:3.4rem;color:rgba(255,255,255,.85);line-height:1}
 .fcard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .fcard h3{font-family:var(--display);font-weight:400;font-size:2.3rem;text-transform:uppercase;line-height:1}
-.fcard .de{font-style:italic;color:#7a6a5a;font-size:.9rem}
+.fcard .de{font-family:var(--hand);font-size:1.3rem;color:#8a5a2c;line-height:1}
 .fcard p{color:#4a3a2c;font-size:.96rem}
 .fcard .ft{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px dashed rgba(42,26,14,.2)}
 .fcard .ft b{font-family:var(--display);font-size:1.9rem;font-weight:400}
-.fcard .ft button{all:unset;cursor:pointer;font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:11px 14px;border-radius:10px}
+.fcard .ft button{all:unset;cursor:pointer;font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:11px 16px;border-radius:99px}
 .fcard .ft button:focus-visible{outline:3px solid var(--leaf)}
-.c-choco .ph{background:#5A2A1B}.c-cafe .ph{background:#B5342A}.c-lucu .ph{background:#F4A23A}
-.order{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;font-weight:700;color:#6a5a4a;font-size:.92rem;flex-wrap:wrap;text-align:center}
-@media (max-width:900px){.grid3{grid-template-columns:1fr}}
+.c-choco .ph{background-color:#5A2A1B}.c-cafe .ph{background-color:#B5342A}.c-lucu .ph{background-color:#F4A23A}
+.ladder{display:flex;align-items:center;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.ladder span{font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;background:var(--paper);border:2px solid var(--ink)}
+.ladder span+span{border-left:0}
+.ladder span:first-child{border-radius:99px 0 0 99px}.ladder span:last-child{border-radius:0 99px 99px 0;background:var(--ink);color:var(--cream)}
+.order{margin-top:14px;text-align:center;font-weight:700;color:#6a5a4a;font-size:.92rem}
+@media (max-width:900px){.grid3{grid-template-columns:1fr}.deco{display:none}}
 
 /* story */
 .story{background:var(--green);color:var(--cream)}
@@ -340,8 +356,6 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 </head>
 <body data-f="lucu">
 
-<div class="tick" aria-hidden="true"><div class="row" id="tick1"></div></div>
-
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
     <a href="#inicio" class="brand" aria-label="La Vieja Verde"><span class="badge"><img src="assets/cara-verde.png" alt=""></span><span class="wm">La Vieja<br>Verde</span></a>
@@ -357,13 +371,16 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
     <div class="lang" role="group" aria-label="Idioma / Sprache / Language"><button data-lang="es" aria-pressed="true">ES</button><button data-lang="de" aria-pressed="false">DE</button><button data-lang="en" aria-pressed="false">EN</button></div>
   </div>
 </nav>
+<div class="andes" aria-hidden="true"></div>
 
 <header class="hero" id="inicio">
-  <div class="wrap">
+  <div class="bgs" aria-hidden="true"><div class="bg" data-f="choco" style="background-image:url(assets/bg-choco.webp)"></div><div class="bg" data-f="cafe" style="background-image:url(assets/bg-cafe.webp)"></div><div class="bg on" data-f="lucu" style="background-image:url(assets/bg-lucu.webp)"></div></div>
+  <div class="wrap hgrid">
     <div>
+      <p class="hand mit" id="hMit"></p>
       <span class="tier" id="hTier"></span>
       <h1 class="disp hname" id="hName"></h1>
-      <p class="hand htag" id="hTag"></p>
+      <p class="htag" id="hTag"></p>
       <p class="hdesc" id="hDesc"></p>
       <div class="chips" id="hChips"></div>
       <div class="buy">
@@ -372,31 +389,33 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
         <a class="btn out" href="#exportacion" data-i18n="hero.b2">Ruta a Alemania</a>
       </div>
     </div>
-    <div class="stage">
-      <div class="disc"></div>
+    <div class="stage" id="stage">
+      <img class="fl p3" id="fl3" src="assets/fl-spoon.webp" alt="" data-d="10">
       <div class="jar"><img id="hJar" class="in" src="assets/jar-lucu.webp" alt="" width="865" height="924"></div>
-      <div class="stk a" id="hSticker"></div>
-      <div class="stk b"><span><b id="hKcal"></b>kcal / 100 g</span></div>
+      <img class="fl p1" id="fl1" src="assets/fl-lucuma.webp" alt="" data-d="28">
+      <img class="fl p2" id="fl2" src="assets/fl-peanut.webp" alt="" data-d="40">
+      <div class="ktag"><span id="hSticker"></span><small><b id="hKcal"></b> kcal / 100 g</small></div>
     </div>
   </div>
-  <div class="wrap picker" id="picker" role="group" aria-label="Sabor">
-    <button data-f="choco" aria-pressed="false"><img src="assets/jar-choco.webp" alt="">Chocomaní</button>
-    <button data-f="cafe" aria-pressed="false"><img src="assets/jar-cafe.webp" alt="">Cafemaní</button>
-    <button data-f="lucu" aria-pressed="true"><img src="assets/jar-lucu.webp" alt="">Lucumaní</button>
+  <div class="wrap lids" id="picker" role="group" aria-label="Sabor">
+    <button data-f="choco" aria-pressed="false"><span class="lid"><i style="background:#5A2A1B"></i></span>Chocomaní<span class="bar"><b></b></span></button>
+    <button data-f="cafe" aria-pressed="false"><span class="lid"><i style="background:#B5342A"></i></span>Cafemaní<span class="bar"><b></b></span></button>
+    <button data-f="lucu" aria-pressed="true"><span class="lid"><i style="background:#F4A23A"></i></span>Lucumaní<span class="bar"><b></b></span></button>
   </div>
+  <svg class="drip" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V28c60 0 70 22 120 22s60-30 120-30 50 36 110 36 70-24 130-24 60 14 120 14 55-34 120-34 70 30 130 30 60-18 120-18 60 26 120 26 70-20 130-20 60 18 120 18V60z" fill="#fff4e2"/></svg>
 </header>
-
-<div class="tick band" aria-hidden="true"><div class="row" id="tick2"></div></div>
 
 <main>
 
-<section class="sec" id="sabores">
+<section class="sec sab" id="sabores">
+  <img class="deco d1" src="assets/fl-lucuma.webp" alt="" aria-hidden="true"><img class="deco d2" src="assets/fl-coffee.webp" alt="" aria-hidden="true"><img class="deco d3" src="assets/fl-choco.webp" alt="" aria-hidden="true">
   <div class="wrap">
     <span class="kick" data-i18n="fl.eye">Presentación de los tres sabores</span>
     <h2 class="disp h2" style="margin-top:10px" data-i18n="fl.h">Una escalera de sabor</h2>
     <p style="max-width:60ch;margin-top:14px;font-size:1.08rem;color:#4a3a2c" data-i18n="fl.p">Tres SKU pensados para Alemania y ordenados en góndola a la altura de los ojos: la entrada a la izquierda, el premium al centro y la insignia a la derecha.</p>
     <div class="grid3" id="cards"></div>
-    <p class="order" data-i18n="fl.note">Entrada → Premium → Insignia · Kit de degustación «Ruta de Sabores del Perú»</p>
+    <div class="ladder" aria-hidden="true"><span data-i18n="ld.1">1 · Entrada</span><span data-i18n="ld.2">2 · Premium</span><span data-i18n="ld.3">3 · Insignia</span></div>
+    <p class="order" data-i18n="fl.note">Kit de degustación «Ruta de Sabores del Perú»</p>
   </div>
 </section>
 
@@ -600,7 +619,7 @@ const VIDEO_FILE = "";    // ej. "video/exportacion.mp4"
 const T={es:{},de:{
 "nav.sabores":"Sorten","nav.historia":"Über uns","nav.ficha":"Datenblatt","nav.attr":"Merkmale","nav.tr":"Rückverfolgung","nav.mkt":"Markt","nav.exp":"Export",
 "hero.pr":"Zielpreis in Deutschland · 220 g","hero.b1":"Datenblatt ansehen","hero.b2":"Route nach Deutschland",
-"fl.eye":"Die drei Sorten","fl.h":"Eine Geschmacksleiter","fl.p":"Drei SKUs für Deutschland, auf Augenhöhe im Regal: Einstieg links, Premium in der Mitte, Flaggschiff rechts.","fl.note":"Einstieg → Premium → Flaggschiff · Verkostungsset „Geschmacksroute Perus“",
+"fl.eye":"Die drei Sorten","fl.h":"Eine Geschmacksleiter","fl.p":"Drei SKUs für Deutschland, auf Augenhöhe im Regal: Einstieg links, Premium in der Mitte, Flaggschiff rechts.","ld.1":"1 · Einstieg","ld.2":"2 · Premium","ld.3":"3 · Flaggschiff","fl.note":"Verkostungsset „Geschmacksroute Perus“",
 "st.cap":"Guten Morgen, Berlin","st.eye":"Wer wir sind","st.h":"Von San Borja auf den deutschen Tisch","st.p":"La Vieja Verde ist ein Naturkostladen mit Restaurant am Boulevard de Surco in San Borja, Lima. Dort entstanden die Erdnusscremes, Joghurts und Granolas. Jetzt geht die Linie mit peruanischen Zutaten nach Deutschland – den am schnellsten wachsenden Erdnussbuttermarkt Europas.","st.q":"„Natürliches Essen, mit Omas Liebe gemacht.“","sm1":"26.400","st.m1":"Follower auf Instagram","st.m2":"Produktionskapazität pro Monat","st.m3":"Gläser in der Pilotcharge",
 "fi.eye":"Zutaten und Nährwerte","fi.ing":"Zutaten","fi.ings":"Nach Gewicht des Endprodukts, absteigend (Verordnung (EU) 1169/2011).","fi.al":"⚠ Allergen: Enthält Erdnüsse","fi.nut":"Nährwertangaben","fi.nuts":"Durchschnittliche Nährwerte pro 100 g","fi.por":"Deine Portion",
 "lu.eye":"Unsere Flaggschiff-Zutat","lu.h":"Lúcuma, das Gold der Inka","lu.p":"Eine Frucht aus den peruanischen Anden mit Karamell- und Ahornnoten. In Europa kaum bekannt – und genau das ist unser Unterschied: Keine Erdnusscreme im deutschen Regal schmeckt so.","lu.1":"Lúcumapulver in jedem Glas Lucumaní","lu.2":"Zielpreis: der höchste der Linie, weil sie die einzigartigste ist","lu.3":"Wettbewerber in Deutschland mit peruanischem Ursprungsgeschmack",
@@ -615,7 +634,7 @@ const T={es:{},de:{
 },en:{
 "nav.sabores":"Flavors","nav.historia":"About","nav.ficha":"Spec sheet","nav.attr":"Features","nav.tr":"Traceability","nav.mkt":"Market","nav.exp":"Export",
 "hero.pr":"Target price in Germany · 220 g","hero.b1":"See spec sheet","hero.b2":"Route to Germany",
-"fl.eye":"The three flavors","fl.h":"A flavor ladder","fl.p":"Three SKUs for Germany, placed at eye level: entry on the left, premium in the middle, flagship on the right.","fl.note":"Entry → Premium → Flagship · “Peruvian Flavor Route” tasting kit",
+"fl.eye":"The three flavors","fl.h":"A flavor ladder","fl.p":"Three SKUs for Germany, placed at eye level: entry on the left, premium in the middle, flagship on the right.","ld.1":"1 · Entry","ld.2":"2 · Premium","ld.3":"3 · Flagship","fl.note":"“Peruvian Flavor Route” tasting kit",
 "st.cap":"Guten Morgen, Berlin","st.eye":"Who we are","st.h":"From San Borja to the German table","st.p":"La Vieja Verde is a natural food shop and restaurant on Boulevard de Surco in San Borja, Lima, where its peanut butters, yogurts and granolas were born. Now its line with Peruvian ingredients heads to Germany, Europe's fastest-growing peanut butter market.","st.q":"“Natural food, made with a grandma's love.”","sm1":"26.4K","st.m1":"Instagram followers","st.m2":"plant capacity per month","st.m3":"jars in the pilot batch",
 "fi.eye":"Ingredients and nutrition","fi.ing":"Ingredients","fi.ings":"By weight of the finished product, in descending order (Regulation (EU) 1169/2011).","fi.al":"⚠ Allergen: peanuts · Enthält Erdnüsse","fi.nut":"Nutrition facts","fi.nuts":"Average values per 100 g","fi.por":"Your portion",
 "lu.eye":"Our flagship ingredient","lu.h":"Lúcuma, the gold of the Incas","lu.p":"A fruit native to the Peruvian Andes with caramel and maple notes. Barely known in Europe – which is exactly our edge: no peanut butter on German shelves tastes like this.","lu.1":"lúcuma powder in every jar of Lucumaní","lu.2":"target price: the highest in the line, because it's the most unique","lu.3":"competitors in Germany with a Peruvian origin flavor",
@@ -692,21 +711,28 @@ const nm=k=>ING[k][lang==="en"?1:lang==="de"?2:0];
 const tr3=(es,en,de)=>lang==="de"?de:lang==="en"?en:es;
 
 /* tickers */
-function ticks(){const d=D[lang];const mk=a=>{const s=a.map(x=>`<span>${x}</span>`).join("");return s+s+s+s};$("#tick1").innerHTML=mk(d.tick1);$("#tick2").innerHTML=mk(d.tick2)}
-
 /* hero */
+const MIT={choco:"Schokolade",cafe:"Kaffee",lucu:"Lúcuma"};
+const FLS={choco:["fl-choco","fl-peanut","fl-spoon"],cafe:["fl-coffee","fl-peanut","fl-spoon"],lucu:["fl-lucuma","fl-peanut","fl-spoon"]};
 let swapT;
 function renderHero(anim){
   const f=F[flav],c=FL[lang][flav];
+  $("#hMit").textContent="Erdnusscreme mit "+MIT[flav];
   $("#hTier").textContent=c.tier;
-  $("#hName").innerHTML=`<span>${f.split[0]}</span><span>${f.split[1]}</span>`;
+  $("#hName").innerHTML=[...f.name].map((ch,i)=>`<span class="l" style="animation-delay:${anim?i*.04:0}s">${ch}</span>`).join("");
+  $("#hName").setAttribute("aria-label",f.name);
   $("#hTag").textContent=c.tag;$("#hDesc").textContent=c.desc;
   $("#hChips").innerHTML=c.chips.map(x=>`<span>${x}</span>`).join("");
   $("#hPrice").textContent=f.price;$("#hSticker").textContent=c.st;$("#hKcal").textContent=f.nut.kcal;
-  const img=$("#hJar");
-  if(anim&&!img.src.endsWith(f.img)){img.classList.remove("in");img.classList.add("out");clearTimeout(swapT);swapT=setTimeout(()=>{img.src=f.img;img.onload=()=>{img.classList.remove("out");img.classList.add("in")}},300)}
-  else img.src=f.img;
+  $$(".bgs .bg").forEach(b=>b.classList.toggle("on",b.dataset.f===flav));
+  const img=$("#hJar"),fls=[$("#fl1"),$("#fl2"),$("#fl3")];
+  const apply=()=>{img.src=f.img;fls.forEach((el,i)=>el.src=`assets/${FLS[flav][i]}.webp`)};
+  if(anim&&!img.src.endsWith(f.img)){img.classList.remove("in");img.classList.add("out");fls.forEach(e=>e.classList.add("hide"));clearTimeout(swapT);
+    swapT=setTimeout(()=>{apply();img.onload=()=>{img.classList.remove("out");img.classList.add("in");fls.forEach(e=>e.classList.remove("hide"))}},320)}
+  else apply();
   img.alt=f.name;
+  $$("#picker .bar b").forEach(b=>{b.classList.remove("go");void b.offsetWidth});
+  if(auto)$(`#picker [data-f="${flav}"] .bar b`).classList.add("go");
 }
 function setFlavor(k,anim=true){
   flav=k;document.body.dataset.f=k;document.querySelector('meta[name=theme-color]').content=F[k].theme;
@@ -715,12 +741,18 @@ function setFlavor(k,anim=true){
 }
 $$("#picker button,#ftabs button").forEach(b=>b.onclick=()=>{stopAuto();setFlavor(b.dataset.f)});
 let auto=setInterval(()=>{const i=ORDER.indexOf(flav);if(scrollY<300)setFlavor(ORDER[(i+1)%3])},5200);
-function stopAuto(){clearInterval(auto)}
+function stopAuto(){clearInterval(auto);auto=null;$$("#picker .bar b").forEach(b=>b.classList.remove("go"))}
 addEventListener("scroll",()=>{if(scrollY>600)stopAuto()},{passive:true,once:true});
+/* parallax de ingredientes */
+const stage=$("#stage");
+if(matchMedia("(hover:hover) and (prefers-reduced-motion:no-preference)").matches){
+  $("#inicio").addEventListener("mousemove",e=>{const r=stage.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/r.width,y=(e.clientY-(r.top+r.height/2))/r.height;
+    $$("#stage .fl").forEach(el=>{const d=+el.dataset.d;el.style.transform=`translate(${-x*d}px,${-y*d}px) rotate(${x*d/4}deg)`})});
+}
 
 /* cards */
 function renderCards(){
-  $("#cards").innerHTML=ORDER.map(k=>{const f=F[k],c=FL[lang][k];return `<article class="fcard c-${k} rv in"><div class="ph"><span class="tg">${c.tier}</span><img src="${f.img}" alt="${f.name}" loading="lazy"></div><div class="bd"><h3>${f.name}</h3><div class="de">Erdnusscreme mit ${{choco:"Schokolade",cafe:"Kaffee",lucu:"Lúcuma"}[k]}</div><p>${c.desc}</p><div class="ft"><b>${f.price}</b><button data-see="${k}">${D[lang].see} →</button></div></div></article>`}).join("");
+  $("#cards").innerHTML=ORDER.map(k=>{const f=F[k],c=FL[lang][k];return `<article class="fcard c-${k} rv in"><div class="ph" style="background-image:url(assets/bg-${k}.webp)"><span class="tg">${c.tier}</span><span class="num">0${ORDER.indexOf(k)+1}</span><img src="${f.img}" alt="${f.name}" loading="lazy"></div><div class="bd"><h3>${f.name}</h3><div class="de">Erdnusscreme mit ${{choco:"Schokolade",cafe:"Kaffee",lucu:"Lúcuma"}[k]}</div><p>${c.desc}</p><div class="ft"><b>${f.price}</b><button data-see="${k}">${D[lang].see} →</button></div></div></article>`}).join("");
   $$("[data-see]").forEach(b=>b.onclick=()=>{stopAuto();setFlavor(b.dataset.see,false);$("#ficha").scrollIntoView({behavior:"smooth"})});
 }
 
@@ -790,7 +822,7 @@ $$("[data-i18n]").forEach(el=>T.es[el.dataset.i18n]=el.innerHTML);
 function setLang(l){lang=l;document.documentElement.lang=l;
   $$("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   $$("[data-i18n]").forEach(el=>{const v=T[l][el.dataset.i18n];if(v!=null)el.innerHTML=v});
-  ticks();renderHero(false);renderCards();renderFicha();renderChart();buildSteps();stop();go(cur);
+  renderHero(false);renderCards();renderFicha();renderChart();buildSteps();stop();go(cur);
   if($("#tl").children.length)trace($("#lotIn").value);
   try{localStorage.setItem("lvv-lang",l)}catch(e){}}
 $$("[data-lang]").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
