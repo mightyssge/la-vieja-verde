@@ -9,7 +9,7 @@
 <meta property="og:image" content="assets/trio.webp">
 <meta name="theme-color" content="#F4A23A">
 <link rel="icon" href="assets/favicon.png">
-<link rel="preload" as="image" href="assets/jar-lucu.webp">
+<link rel="preload" as="image" href="assets/jarc-lucu.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
@@ -57,9 +57,9 @@ section{position:relative}
 
 /* hero */
 .hero{position:relative;background:var(--fc);color:var(--fink);overflow:hidden;transition:background .7s var(--ease),color .7s var(--ease);isolation:isolate}
-.bgs .bg{position:absolute;inset:0;background-size:cover;background-position:right center;opacity:0;transform:scale(1.06);transition:opacity .9s var(--ease),transform 1.6s var(--ease);z-index:-2}
+.bgs .bg{position:absolute;inset:0;background-size:cover;background-position:100% 50%;opacity:0;transform:scale(1.06);transition:opacity .9s var(--ease),transform 1.6s var(--ease);z-index:-2}
 .bgs .bg.on{opacity:1;transform:none}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--fc) 0%,var(--fc) 34%,transparent 60%),radial-gradient(ellipse at 72% 55%,rgba(0,0,0,.18),transparent 60%);transition:background .7s}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--fc) 0%,var(--fc) 40%,color-mix(in srgb,var(--fc) 55%,transparent) 54%,transparent 72%);transition:background .7s}
 .hgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;min-height:min(700px,calc(100svh - 200px));padding:36px 0 10px}
 .mit{font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1;transform:rotate(-2deg);transform-origin:left;margin-bottom:10px}
 .tier{display:inline-flex;gap:8px;align-items:center;background:var(--fdeep);color:var(--fc);padding:7px 14px;border-radius:6px;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
@@ -81,7 +81,8 @@ body[data-f="choco"] .hero .btn,body[data-f="cafe"] .hero .btn{background:var(--
 body[data-f] .hero .btn.out{background:transparent;color:inherit;border-color:currentColor}
 .btn:hover{transform:translateY(-2px)}
 .stage{position:relative;width:100%;height:min(580px,calc(100svh - 250px));min-height:380px;justify-self:center}
-.stage .jar{position:absolute;inset:4% 10% 2%;display:flex;align-items:center;justify-content:center;z-index:2}
+.stage .jar{position:absolute;inset:4% 10% 6%;display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .4s var(--ease)}
+.stage::after{content:"";position:absolute;left:24%;right:24%;bottom:4%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.45),transparent);z-index:1}
 .stage .jar img{height:100%;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 34px 40px rgba(0,0,0,.42));transition:opacity .45s var(--ease),transform .6s var(--ease)}
 .stage .jar img.out{opacity:0;transform:translateY(40px) scale(.9)}
 .stage .jar img.in{animation:float 7s ease-in-out infinite}
@@ -91,7 +92,7 @@ body[data-f] .hero .btn.out{background:transparent;color:inherit;border-color:cu
 .fl.p1{width:24%;left:2%;top:10%}
 .fl.p2{width:20%;right:2%;bottom:4%}
 .fl.p3{width:18%;right:6%;top:4%;z-index:1}
-.ktag{position:absolute;z-index:4;left:4%;bottom:12%;background:#e9d4ad;color:#2a1a0e;padding:14px 18px 12px 30px;border-radius:6px 14px 14px 6px;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);font-family:var(--hand);font-size:1.45rem;line-height:1;transform:rotate(-8deg);box-shadow:0 14px 24px -12px rgba(0,0,0,.5)}
+.ktag{position:absolute;z-index:4;left:0;bottom:16%;background:#e9d4ad;color:#2a1a0e;padding:14px 18px 12px 30px;border-radius:6px 14px 14px 6px;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);font-family:var(--hand);font-size:1.45rem;line-height:1;transform:rotate(-8deg);box-shadow:0 14px 24px -12px rgba(0,0,0,.5)}
 .ktag::before{content:"";position:absolute;left:12px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--fc)}
 .ktag small{display:block;font-family:var(--body);font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-top:4px}
 .lids{display:flex;gap:26px;padding:10px 0 70px;position:relative;z-index:2}
@@ -111,17 +112,13 @@ body[data-f="lucu"] .lids button[aria-pressed=true] .lid{box-shadow:0 0 0 4px va
 
 /* flavors grid */
 .sab{background:var(--cream);overflow:hidden}
-.deco{position:absolute;pointer-events:none;filter:drop-shadow(0 16px 20px rgba(0,0,0,.25));z-index:0}
-.deco.d1{width:200px;left:-60px;top:80px;transform:rotate(-20deg)}
-.deco.d2{width:170px;right:-40px;top:40px;transform:rotate(25deg)}
-.deco.d3{width:150px;right:6%;bottom:30px;transform:rotate(-10deg)}
 .sab .wrap{position:relative;z-index:1}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
 .fcard{border-radius:var(--r);overflow:hidden;background:var(--paper);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);box-shadow:0 20px 40px -30px rgba(42,26,14,.5)}
 .fcard:hover{transform:translateY(-8px);box-shadow:0 34px 60px -30px rgba(42,26,14,.6)}
-.fcard .ph{aspect-ratio:1/1.02;display:grid;place-items:end center;position:relative;overflow:hidden;background-size:cover;background-position:82% center}
+.fcard .ph{aspect-ratio:1/1.02;display:grid;place-items:end center;position:relative;overflow:hidden;background-size:cover;background-position:30% center}
 .fcard .ph::after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(0,0,0,.25))}
-.fcard .ph img{width:70%;margin-bottom:6%;position:relative;z-index:1;transition:transform .6s var(--ease);filter:drop-shadow(0 22px 24px rgba(0,0,0,.4))}
+.fcard .ph img{width:52%;margin-bottom:9%;position:relative;z-index:1;transition:transform .6s var(--ease);filter:drop-shadow(0 22px 24px rgba(0,0,0,.4))}
 .fcard:hover .ph img{transform:translateY(-8px) rotate(-3deg)}
 .fcard .ph .tg{position:absolute;z-index:2;left:16px;top:16px;background:var(--paper);color:var(--ink);font-weight:800;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
 .fcard .ph .num{position:absolute;z-index:2;right:16px;top:8px;font-family:var(--display);font-size:3.4rem;color:rgba(255,255,255,.85);line-height:1}
@@ -139,8 +136,7 @@ body[data-f="lucu"] .lids button[aria-pressed=true] .lid{box-shadow:0 0 0 4px va
 .ladder span+span{border-left:0}
 .ladder span:first-child{border-radius:99px 0 0 99px}.ladder span:last-child{border-radius:0 99px 99px 0;background:var(--ink);color:var(--cream)}
 .order{margin-top:14px;text-align:center;font-weight:700;color:#6a5a4a;font-size:.92rem}
-@media (max-width:900px){.grid3{grid-template-columns:1fr}.deco{display:none}}
-
+@media (max-width:900px){.grid3{grid-template-columns:1fr}}
 /* story */
 .story{background:var(--green);color:var(--cream)}
 .story .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
@@ -346,6 +342,29 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 .fgrid2>*{min-width:0}
 @media (max-width:900px){.fgrid2{grid-template-columns:1fr}.team ul{columns:1}footer .qr{flex-direction:column;text-align:center}}
 
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:var(--green);display:grid;place-items:center;overflow:hidden;cursor:pointer}
+#intro.bye{animation:introUp .9s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes introUp{to{transform:translateY(-110%)}}
+#intro .drip{top:100%;bottom:auto;height:70px;transform:scaleY(-1)}
+#intro .orbit{position:relative;width:min(520px,80vw);aspect-ratio:1}
+#intro .pn{position:absolute;left:50%;top:50%;width:46%;margin:-17% 0 0 -23%;animation:pDrop 1s cubic-bezier(.3,1.5,.5,1) both,pSpin 6s linear 1s infinite}
+@keyframes pDrop{0%{transform:translateY(-140%) rotate(-60deg);opacity:0}60%{opacity:1}100%{transform:none}}
+@keyframes pSpin{to{transform:rotate(360deg)}}
+#intro .ing{position:absolute;width:30%;filter:drop-shadow(0 14px 18px rgba(0,0,0,.4));opacity:0}
+#intro .i1{left:-6%;top:6%;animation:fly1 .8s var(--ease) .55s forwards}
+#intro .i2{right:-6%;top:10%;animation:fly2 .8s var(--ease) .7s forwards}
+#intro .i3{left:34%;bottom:-8%;animation:fly3 .8s var(--ease) .85s forwards}
+@keyframes fly1{from{opacity:0;transform:translate(-60vw,-20vh) rotate(-90deg)}to{opacity:1;transform:rotate(-12deg)}}
+@keyframes fly2{from{opacity:0;transform:translate(60vw,-20vh) rotate(90deg)}to{opacity:1;transform:rotate(14deg)}}
+@keyframes fly3{from{opacity:0;transform:translateY(60vh) rotate(60deg)}to{opacity:1;transform:rotate(-6deg)}}
+#intro .wordm{position:absolute;left:0;right:0;bottom:12vh;text-align:center;color:var(--cream);opacity:0;animation:wIn .7s var(--ease) 1.2s forwards}
+#intro .wordm b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.9;display:block;color:#F4A23A}
+#intro .wordm span{font-family:var(--hand);font-size:clamp(1.4rem,2.6vw,2rem)}
+@keyframes wIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+#intro .skip{position:absolute;right:18px;bottom:18px;color:rgba(255,244,226,.6);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
 .kbd{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--ink);color:var(--cream);font-size:.8rem;padding:9px 14px;border-radius:99px;display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s var(--ease);pointer-events:none}
 .kbd.show{opacity:1;transform:none}
 .kbd kbd{font:800 .74rem var(--body);background:rgba(255,255,255,.16);padding:2px 7px;border-radius:6px}
@@ -356,6 +375,17 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 </style>
 </head>
 <body data-f="lucu">
+<div id="intro" aria-hidden="true">
+  <div class="orbit">
+    <img class="ing i1" src="assets/fl-lucuma.webp" alt="">
+    <img class="ing i2" src="assets/fl-coffee.webp" alt="">
+    <img class="ing i3" src="assets/fl-choco.webp" alt="">
+    <img class="pn" src="assets/peanut.webp" alt="">
+  </div>
+  <div class="wordm"><b>La Vieja Verde</b><span>Sabores peruanos que nutren un mejor mañana</span></div>
+  <span class="skip">Clic para entrar</span>
+  <svg class="drip" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 60V28c60 0 70 22 120 22s60-30 120-30 50 36 110 36 70-24 130-24 60 14 120 14 55-34 120-34 70 30 130 30 60-18 120-18 60 26 120 26 70-20 130-20 60 18 120 18V60z" fill="#1f3a1f"/></svg>
+</div>
 
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
@@ -391,10 +421,7 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
       </div>
     </div>
     <div class="stage" id="stage">
-      <img class="fl p3" id="fl3" src="assets/fl-spoon.webp" alt="" data-d="10">
-      <div class="jar"><img id="hJar" class="in" src="assets/jar-lucu.webp" alt="" width="865" height="924"></div>
-      <img class="fl p1" id="fl1" src="assets/fl-lucuma.webp" alt="" data-d="28">
-      <img class="fl p2" id="fl2" src="assets/fl-peanut.webp" alt="" data-d="40">
+      <div class="jar" id="jarWrap"><img id="hJar" class="in" src="assets/jarc-lucu.webp" alt="" width="738" height="1000"></div>
       <div class="ktag"><span id="hSticker"></span><small><b id="hKcal"></b> kcal / 100 g</small></div>
     </div>
   </div>
@@ -409,7 +436,6 @@ footer .qr a{font-weight:800;font-size:.84rem;word-break:break-all}
 <main>
 
 <section class="sec sab" id="sabores">
-  <img class="deco d1" src="assets/fl-lucuma.webp" alt="" aria-hidden="true"><img class="deco d2" src="assets/fl-coffee.webp" alt="" aria-hidden="true"><img class="deco d3" src="assets/fl-choco.webp" alt="" aria-hidden="true">
   <div class="wrap">
     <span class="kick" data-i18n="fl.eye">Presentación de los tres sabores</span>
     <h2 class="disp h2" style="margin-top:10px" data-i18n="fl.h">Una escalera de sabor</h2>
@@ -677,9 +703,9 @@ en:{lot:"Batch",nut:["Energy","Fat","of which saturates","Carbohydrate","of whic
 
 const ING={mani:["Maní tostado","Roasted peanuts","Erdnüsse geröstet","#c8935a"],azucar:["Azúcar de caña","Cane sugar","Rohrzucker","#d9b97f"],cacao:["Cacao en polvo","Cacao powder","Kakaopulver","#5A2A1B"],cafe:["Café peruano molido","Ground Peruvian coffee","Kaffee aus Peru, gemahlen","#3a2216"],lucuma:["Polvo de lúcuma","Lúcuma powder","Lúcumapulver","#F4A23A"],girasol:["Aceite de girasol","Sunflower oil","Sonnenblumenöl","#e8cf5b"],sal:["Sal marina","Sea salt","Meersalz","#9fb3a8"]};
 const F={
- choco:{name:"Chocomaní",split:["Choco","maní"],price:"€ 4,49",img:"assets/jar-choco.webp",ing:{mani:84,cacao:8,azucar:5,girasol:2.5,sal:.5},nut:{kj:2310,kcal:552,fat:42,sat:7,carb:25,sug:12,fib:10,pro:25,salt:.5},est:true,theme:"#5A2A1B"},
- cafe:{name:"Cafemaní",split:["Cafe","maní"],price:"€ 4,99",img:"assets/jar-cafe.webp",ing:{mani:85,azucar:6.5,cafe:5,girasol:3,sal:.5},nut:{kj:2351,kcal:562,fat:43,sat:6.5,carb:25,sug:13.5,fib:9,pro:24,salt:.5},est:true,theme:"#B5342A"},
- lucu:{name:"Lucumaní",split:["Lucu","maní"],price:"€ 5,19",img:"assets/jar-lucu.webp",ing:{mani:85,azucar:6.5,lucuma:5,girasol:3,sal:.5},nut:{kj:2364,kcal:565,fat:42,sat:6.3,carb:26,sug:15,fib:7,pro:24,salt:.5},est:false,theme:"#F4A23A"}};
+ choco:{name:"Chocomaní",split:["Choco","maní"],price:"€ 4,49",img:"assets/jarc-choco.webp",ing:{mani:84,cacao:8,azucar:5,girasol:2.5,sal:.5},nut:{kj:2310,kcal:552,fat:42,sat:7,carb:25,sug:12,fib:10,pro:25,salt:.5},est:true,theme:"#5A2A1B"},
+ cafe:{name:"Cafemaní",split:["Cafe","maní"],price:"€ 4,99",img:"assets/jarc-cafe.webp",ing:{mani:85,azucar:6.5,cafe:5,girasol:3,sal:.5},nut:{kj:2351,kcal:562,fat:43,sat:6.5,carb:25,sug:13.5,fib:9,pro:24,salt:.5},est:true,theme:"#B5342A"},
+ lucu:{name:"Lucumaní",split:["Lucu","maní"],price:"€ 5,19",img:"assets/jarc-lucu.webp",ing:{mani:85,azucar:6.5,lucuma:5,girasol:3,sal:.5},nut:{kj:2364,kcal:565,fat:42,sat:6.3,carb:26,sug:15,fib:7,pro:24,salt:.5},est:false,theme:"#F4A23A"}};
 const ORDER=["choco","cafe","lucu"];
 const STEPS={
 es:[{t:"Producción",h:"Producción en Lima",p:"El maní se recibe, se tuesta, se despielica, se muele y se mezcla con cacao, café o lúcuma, azúcar de caña, aceite de girasol y sal marina. Luego se envasa en frascos de vidrio de 220 g.",li:[["480","frascos por lote"],["615 min","ciclo completo por lote"],["~800 kg/mes","capacidad de planta"]]},
@@ -710,7 +736,6 @@ const tr3=(es,en,de)=>lang==="de"?de:lang==="en"?en:es;
 
 /* hero */
 const MIT={choco:"Schokolade",cafe:"Kaffee",lucu:"Lúcuma"};
-const FLS={choco:["fl-choco","fl-peanut","fl-spoon"],cafe:["fl-coffee","fl-peanut","fl-spoon"],lucu:["fl-lucuma","fl-peanut","fl-spoon"]};
 let swapT;
 function renderHero(anim){
   const f=F[flav],c=FL[lang][flav];
@@ -722,11 +747,10 @@ function renderHero(anim){
   $("#hChips").innerHTML=c.chips.map(x=>`<span>${x}</span>`).join("");
   $("#hPrice").textContent=f.price;$("#hSticker").textContent=c.st;$("#hKcal").textContent=f.nut.kcal;
   $$(".bgs .bg").forEach(b=>b.classList.toggle("on",b.dataset.f===flav));
-  const img=$("#hJar"),fls=[$("#fl1"),$("#fl2"),$("#fl3")];
-  const apply=()=>{img.src=f.img;fls.forEach((el,i)=>el.src=`assets/${FLS[flav][i]}.webp`)};
-  if(anim&&!img.src.endsWith(f.img)){img.classList.remove("in");img.classList.add("out");fls.forEach(e=>e.classList.add("hide"));clearTimeout(swapT);
-    swapT=setTimeout(()=>{apply();img.onload=()=>{img.classList.remove("out");img.classList.add("in");fls.forEach(e=>e.classList.remove("hide"))}},320)}
-  else apply();
+  const img=$("#hJar");
+  if(anim&&!img.src.endsWith(f.img)){img.classList.remove("in");img.classList.add("out");clearTimeout(swapT);
+    swapT=setTimeout(()=>{img.src=f.img;img.onload=()=>{img.classList.remove("out");img.classList.add("in")}},320)}
+  else img.src=f.img;
   img.alt=f.name;
   $$("#picker .bar b").forEach(b=>{b.classList.remove("go");void b.offsetWidth});
   if(auto)$(`#picker [data-f="${flav}"] .bar b`).classList.add("go");
@@ -740,11 +764,11 @@ $$("#picker button,#ftabs button").forEach(b=>b.onclick=()=>{stopAuto();setFlavo
 let auto=setInterval(()=>{const i=ORDER.indexOf(flav);if(scrollY<300)setFlavor(ORDER[(i+1)%3])},5200);
 function stopAuto(){clearInterval(auto);auto=null;$$("#picker .bar b").forEach(b=>b.classList.remove("go"))}
 addEventListener("scroll",()=>{if(scrollY>600)stopAuto()},{passive:true,once:true});
-/* parallax de ingredientes */
-const stage=$("#stage");
+/* parallax suave del frasco */
+const stage=$("#stage"),jw=$("#jarWrap");
 if(matchMedia("(hover:hover) and (prefers-reduced-motion:no-preference)").matches){
   $("#inicio").addEventListener("mousemove",e=>{const r=stage.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/r.width,y=(e.clientY-(r.top+r.height/2))/r.height;
-    $$("#stage .fl").forEach(el=>{const d=+el.dataset.d;el.style.transform=`translate(${-x*d}px,${-y*d}px) rotate(${x*d/4}deg)`})});
+    jw.style.transform=`translate(${x*-14}px,${y*-10}px) rotate(${x*3}deg)`});
 }
 
 /* cards */
@@ -829,6 +853,13 @@ setLang(["es","de","en"].includes(qp.get("lang"))?qp.get("lang"):saved);
 if(F[qp.get("f")]){stopAuto();setFlavor(qp.get("f"),false)}else setFlavor("lucu",false);
 trace("LU-2028-014");
 
+
+/* intro: una vez por sesión */
+(()=>{const el=$("#intro");if(!el)return;let seen=false;try{seen=sessionStorage.getItem("lvv-intro")==="1"}catch(e){}
+ if(seen||matchMedia("(prefers-reduced-motion:reduce)").matches||new URLSearchParams(location.search).has("nointro")){el.remove();return}
+ document.documentElement.style.overflow="hidden";
+ const out=()=>{if(el.classList.contains("bye"))return;el.classList.add("bye");document.documentElement.style.overflow="";try{sessionStorage.setItem("lvv-intro","1")}catch(e){};setTimeout(()=>el.remove(),950)};
+ el.addEventListener("click",out);addEventListener("keydown",out,{once:true});setTimeout(out,2900)})();
 /* reveal, nav, teclado */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");if(e.target.id==="chart")grow();io.unobserve(e.target)}}),{threshold:.12});
 $$(".rv").forEach(el=>io.observe(el));
