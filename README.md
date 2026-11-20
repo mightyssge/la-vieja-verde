@@ -21,6 +21,12 @@ El QR (`assets/qr.png`, `assets/qr-imprimir.png`) ya apunta a esa URL.
 - Flechas ← → del teclado: saltar de sección en sección.
 - Sección Exportación: botón «Reproducir recorrido» anima la ruta Lima → Callao → Panamá → Hamburgo.
 - Trazabilidad: probar los lotes de ejemplo CH-2028-009, CF-2028-011, LU-2028-014.
+- El selector de sabor (Chocomaní / Cafemaní / Lucumaní) cambia el color de toda la página.
+  Para abrir directo en un sabor: `?f=choco`, `?f=cafe` o `?f=lucu` (combinable con `&lang=de`).
+
+## Imágenes
+Fotos de producto y ambiente generadas con IA (Higgsfield, GPT Image 2.6) usando como referencia
+la foto real del frasco de 220 g de laviejaverdeperu.com. Fondos recortados con el removedor de Higgsfield.
 
 ## Ver en local
 ```
