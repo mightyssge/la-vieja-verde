@@ -552,9 +552,7 @@ footer .wm{font-size:1.6rem}
 
     <div class="player reveal">
       <div class="screen" id="screen">
-        <video id="vid" controls preload="metadata" playsinline>
-          <source src="video/exportacion.mp4" type="video/mp4">
-        </video>
+        <video id="vid" controls preload="metadata" playsinline hidden></video>
         <div class="placeholder" id="vidPh" hidden>
           <div><b data-i18n="ex.vt">Proceso de exportación</b><p data-i18n="ex.vp">Recorre la ruta interactiva paso a paso, de la planta en Lima a las tiendas de Alemania.</p><button id="phPlay" data-i18n="ex.vb">▶ Reproducir recorrido</button></div>
         </div>
@@ -613,6 +611,7 @@ footer .wm{font-size:1.6rem}
 <script>
 /* ===== Video: pega aquí un enlace de YouTube si no usas el archivo local ===== */
 const VIDEO_YOUTUBE = ""; // ej. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+const VIDEO_FILE = "";    // ej. "video/exportacion.mp4"
 /* Capítulos del video en segundos (ajustar a los tiempos reales) */
 const CHAPTER_TIMES = [0, 20, 40, 60, 80, 100];
 
@@ -840,8 +839,8 @@ function noVideo(){hasVideo=false;vid.hidden=true;ph.hidden=false;buildChapters(
 if(VIDEO_YOUTUBE){
   const id=(VIDEO_YOUTUBE.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)||[])[1];
   if(id){hasVideo=false;$('#screen').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Video" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`}
-}else{
-  vid.querySelector('source').addEventListener('error',noVideo);
+}else if(!VIDEO_FILE){noVideo()}else{
+  vid.hidden=false;vid.src=VIDEO_FILE;vid.addEventListener('error',noVideo);
   vid.addEventListener('loadedmetadata',()=>{hasVideo=true;buildChapters();go(cur)});
   vid.addEventListener('timeupdate',()=>{let k=0;CHAPTER_TIMES.forEach((t,i)=>{if(vid.currentTime>=t)k=i});if(k!==cur)go(k)});
 }

@@ -5,12 +5,13 @@ información nutricional, atributos, trazabilidad QR, mercado alemán y proceso 
 Idiomas ES / DE / EN (botones arriba a la derecha, o `?lang=de` en la URL).
 
 ## Antes de exponer
-1. **Video de exportación**: guardar el video como `video/exportacion.mp4`
-   (o pegar el enlace de YouTube en `VIDEO_YOUTUBE`, dentro de `index.html`).
-   Ajustar `CHAPTER_TIMES` a los segundos reales de cada etapa del video.
-2. **Publicar** la carpeta completa (Netlify Drop: arrastrar la carpeta en https://app.netlify.com/drop,
-   o GitHub Pages).
-3. **QR definitivo** con la URL publicada:
+Publicado en **https://mightyssge.github.io/la-vieja-verde/** (GitHub Pages, se actualiza con cada push a `main`).
+El QR (`assets/qr.png`, `assets/qr-imprimir.png`) ya apunta a esa URL.
+
+1. **Video de exportación (opcional)**: guardar el archivo como `video/exportacion.mp4` y poner
+   `VIDEO_FILE = "video/exportacion.mp4"` en `index.html`, o pegar un enlace en `VIDEO_YOUTUBE`.
+   Ajustar `CHAPTER_TIMES` a los segundos reales. Sin video, se muestra la ruta animada.
+2. **Si cambia la URL**, regenerar el QR:
    ```
    python tools/make_qr.py https://TU-URL
    ```
