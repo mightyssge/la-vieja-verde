@@ -8,10 +8,7 @@ Idiomas ES / DE / EN (botones arriba a la derecha, o `?lang=de` en la URL).
 Publicado en **https://mightyssge.github.io/la-vieja-verde/** (GitHub Pages, se actualiza con cada push a `main`).
 El QR (`assets/qr.png`, `assets/qr-imprimir.png`) ya apunta a esa URL.
 
-1. **Video de exportación**: `video/exportacion.mp4` (38 s) se hizo con HyperFrames; el proyecto fuente está en `../la-vieja-verde-video/` (`npm run check`, `npm run render -- -o ../la-vieja-verde/video/exportacion.mp4`).
-   Para reemplazarlo por otro video: guardar el archivo como `video/exportacion.mp4` y poner
-   `VIDEO_FILE = "video/exportacion.mp4"` en `index.html`, o pegar un enlace en `VIDEO_YOUTUBE`.
-   Ajustar `CHAPTER_TIMES` a los segundos reales. Sin video, se muestra la ruta animada.
+1. **Video de exportación**: `video/recorrido.mp4` (63 s) es la grabación del recorrido interactivo del grupo; la versión interactiva está en `recorrido.html` (ruta animada, Incoterm FOB/CIF, precios por sabor y QR). Para cambiar el video, reemplaza `video/recorrido.mp4`.
 2. **Si cambia la URL**, regenerar el QR:
    ```
    python tools/make_qr.py https://TU-URL
